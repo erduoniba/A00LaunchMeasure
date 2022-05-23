@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'A00LaunchMeasure_Example' do
+  pod 'A00LaunchMeasure', :path => '../'
+
+  target 'A00LaunchMeasure_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
