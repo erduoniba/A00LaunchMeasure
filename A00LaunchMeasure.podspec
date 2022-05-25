@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
   
   s.subspec 'LoadMeasure' do |sub|
-    sub.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*'
+    sub.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
   end
   
   # s.resource_bundles = {
