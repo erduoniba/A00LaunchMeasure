@@ -29,8 +29,10 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-
-  s.source_files = 'A00LaunchMeasure/Classes/**/*'
+  
+  s.subspec 'LoadMeasure' do |sub|
+    sub.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*'
+  end
   
   # s.resource_bundles = {
   #   'A00LaunchMeasure' => ['A00LaunchMeasure/Assets/*.png']
