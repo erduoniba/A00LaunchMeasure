@@ -1,0 +1,22 @@
+{
+  "name": "A00LaunchMeasure",
+  "version": "0.1.0",
+  "summary": "A short description of A00LaunchMeasure.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/denglibing5/A00LaunchMeasure",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "denglibing5": "denglibing3@jd.com"
+  },
+  "source": {
+    "git": "https://github.com/denglibing5/A00LaunchMeasure.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "A00LaunchMeasure/Classes/**/*"
+}

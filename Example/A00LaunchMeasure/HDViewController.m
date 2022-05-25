@@ -14,6 +14,11 @@
 
 @implementation HDViewController
 
++ (void)load {
+    NSLog(@"HDViewController load");
+    sleep(2);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

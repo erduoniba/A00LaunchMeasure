@@ -1,0 +1,16 @@
+PODS:
+  - A00LaunchMeasure (0.1.0)
+
+DEPENDENCIES:
+  - A00LaunchMeasure (from `../`)
+
+EXTERNAL SOURCES:
+  A00LaunchMeasure:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  A00LaunchMeasure: 2f8945b6d509f6d2e051f2958c38ea10691745dc
+
+PODFILE CHECKSUM: 62cfb23ecf1f60e7dfdadbe58dfa9d6fdbf513bc
+
+COCOAPODS: 1.10.0
