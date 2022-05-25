@@ -21,7 +21,7 @@
   "subspecs": [
     {
       "name": "LoadMeasure",
-      "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*"
+      "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}"
     }
   ]
 }
