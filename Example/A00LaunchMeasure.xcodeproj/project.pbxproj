@@ -24,9 +24,22 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C18FA941447083615EF409B0 /* Pods_A00LaunchMeasure_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75D2E4B00D9DCCDB28EA37 /* Pods_A00LaunchMeasure_Example.framework */; };
-		D936EE91283CAB8F00D3FD45 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0D6DC283C692500515096 /* HDLoadFramework.framework */; platformFilter = ios; };
-		D936EE92283CAB8F00D3FD45 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0D6DC283C692500515096 /* HDLoadFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9B0D6C2283C674700515096 /* HDViewController+HDLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */; };
+		D9FF8C072840C1FE00435401 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C052840C1F400435401 /* HDLoadFramework.framework */; };
+		D9FF8C082840C1FE00435401 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C052840C1F400435401 /* HDLoadFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9FF8C212840D94000435401 /* HDInitializerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C1F2840D93700435401 /* HDInitializerFramework.framework */; platformFilter = ios; };
+		D9FF8C222840D94100435401 /* HDInitializerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C1F2840D93700435401 /* HDInitializerFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */; };
+		D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */; };
+		D9FF8C452844BAAF00435401 /* TextVarVarC.c in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C322844BAAD00435401 /* TextVarVarC.c */; };
+		D9FF8C462844BAAF00435401 /* TestMacro.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C342844BAAD00435401 /* TestMacro.mm */; };
+		D9FF8C472844BAAF00435401 /* TestCBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C372844BAAD00435401 /* TestCBlock.mm */; };
+		D9FF8C482844BAAF00435401 /* TestStaticClassMemberMutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C382844BAAD00435401 /* TestStaticClassMemberMutex.cpp */; };
+		D9FF8C492844BAAF00435401 /* TestFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C392844BAAD00435401 /* TestFunction.mm */; };
+		D9FF8C4A2844BAAF00435401 /* TestDict.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C3D2844BAAE00435401 /* TestDict.m */; };
+		D9FF8C4B2844BAAF00435401 /* TestClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C3E2844BAAE00435401 /* TestClass.mm */; };
+		D9FF8C4C2844BAAF00435401 /* TestVarVar.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C412844BAAE00435401 /* TestVarVar.mm */; };
+		D9FF8C4D2844BAAF00435401 /* TestRectZero.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C422844BAAF00435401 /* TestRectZero.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +59,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D936EE92283CAB8F00D3FD45 /* HDLoadFramework.framework in Embed Frameworks */,
+				D9FF8C222840D94100435401 /* HDInitializerFramework.framework in Embed Frameworks */,
+				D9FF8C082840C1FE00435401 /* HDLoadFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +99,29 @@
 		D2E454F2B0151D1CBFAC2487 /* Pods-A00LaunchMeasure_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A00LaunchMeasure_Example.debug.xcconfig"; path = "Target Support Files/Pods-A00LaunchMeasure_Example/Pods-A00LaunchMeasure_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0D6C0283C674700515096 /* HDViewController+HDLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDViewController+HDLoad.h"; sourceTree = "<group>"; };
 		D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HDViewController+HDLoad.m"; sourceTree = "<group>"; };
-		D9B0D6DC283C692500515096 /* HDLoadFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDLoadFramework.framework; sourceTree = "<group>"; };
+		D9FF8C052840C1F400435401 /* HDLoadFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDLoadFramework.framework; sourceTree = "<group>"; };
+		D9FF8C1F2840D93700435401 /* HDInitializerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDInitializerFramework.framework; sourceTree = "<group>"; };
+		D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = A00CppInitMeasure.mm; sourceTree = "<group>"; };
+		D9FF8C2B2844B47A00435401 /* A00CppInitMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A00CppInitMeasure.h; sourceTree = "<group>"; };
+		D9FF8C2E2844B8CC00435401 /* HDInitializerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDInitializerTest.h; sourceTree = "<group>"; };
+		D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDInitializerTest.m; sourceTree = "<group>"; };
+		D9FF8C322844BAAD00435401 /* TextVarVarC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TextVarVarC.c; sourceTree = "<group>"; };
+		D9FF8C342844BAAD00435401 /* TestMacro.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestMacro.mm; sourceTree = "<group>"; };
+		D9FF8C352844BAAD00435401 /* TestCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCBlock.h; sourceTree = "<group>"; };
+		D9FF8C362844BAAD00435401 /* TestStaticClassMemberMutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestStaticClassMemberMutex.hpp; sourceTree = "<group>"; };
+		D9FF8C372844BAAD00435401 /* TestCBlock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestCBlock.mm; sourceTree = "<group>"; };
+		D9FF8C382844BAAD00435401 /* TestStaticClassMemberMutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStaticClassMemberMutex.cpp; sourceTree = "<group>"; };
+		D9FF8C392844BAAD00435401 /* TestFunction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestFunction.mm; sourceTree = "<group>"; };
+		D9FF8C3A2844BAAD00435401 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		D9FF8C3B2844BAAE00435401 /* TestDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDict.h; sourceTree = "<group>"; };
+		D9FF8C3C2844BAAE00435401 /* TestRectZero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRectZero.h; sourceTree = "<group>"; };
+		D9FF8C3D2844BAAE00435401 /* TestDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDict.m; sourceTree = "<group>"; };
+		D9FF8C3E2844BAAE00435401 /* TestClass.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestClass.mm; sourceTree = "<group>"; };
+		D9FF8C3F2844BAAE00435401 /* TestMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMacro.h; sourceTree = "<group>"; };
+		D9FF8C402844BAAE00435401 /* TestVarVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVarVar.h; sourceTree = "<group>"; };
+		D9FF8C412844BAAE00435401 /* TestVarVar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestVarVar.mm; sourceTree = "<group>"; };
+		D9FF8C422844BAAF00435401 /* TestRectZero.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRectZero.mm; sourceTree = "<group>"; };
+		D9FF8C432844BAAF00435401 /* TestFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFunction.h; sourceTree = "<group>"; };
 		E0A421B08513B420D41CE473 /* Pods_A00LaunchMeasure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A00LaunchMeasure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,7 +131,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18FA941447083615EF409B0 /* Pods_A00LaunchMeasure_Example.framework in Frameworks */,
-				D936EE91283CAB8F00D3FD45 /* HDLoadFramework.framework in Frameworks */,
+				D9FF8C072840C1FE00435401 /* HDLoadFramework.framework in Frameworks */,
+				D9FF8C212840D94000435401 /* HDInitializerFramework.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -164,6 +201,7 @@
 		6003F593195388D20070C39A /* Example for A00LaunchMeasure */ = {
 			isa = PBXGroup;
 			children = (
+				D9FF8C292844B47900435401 /* StaticInitializerMeasure */,
 				6003F59C195388D20070C39A /* HDAppDelegate.h */,
 				6003F59D195388D20070C39A /* HDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -171,9 +209,10 @@
 				6003F5A6195388D20070C39A /* HDViewController.m */,
 				D9B0D6C0283C674700515096 /* HDViewController+HDLoad.h */,
 				D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */,
+				D9FF8C1F2840D93700435401 /* HDInitializerFramework.framework */,
+				D9FF8C052840C1F400435401 /* HDLoadFramework.framework */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
-				D9B0D6DB283C691800515096 /* HDLoadFramework */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for A00LaunchMeasure";
@@ -220,12 +259,40 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		D9B0D6DB283C691800515096 /* HDLoadFramework */ = {
+		D9FF8C292844B47900435401 /* StaticInitializerMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				D9B0D6DC283C692500515096 /* HDLoadFramework.framework */,
+				D9FF8C2B2844B47A00435401 /* A00CppInitMeasure.h */,
+				D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */,
+				D9FF8C2D2844B87600435401 /* TestCode */,
 			);
-			name = HDLoadFramework;
+			path = StaticInitializerMeasure;
+			sourceTree = "<group>";
+		};
+		D9FF8C2D2844B87600435401 /* TestCode */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF8C2E2844B8CC00435401 /* HDInitializerTest.h */,
+				D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */,
+				D9FF8C352844BAAD00435401 /* TestCBlock.h */,
+				D9FF8C372844BAAD00435401 /* TestCBlock.mm */,
+				D9FF8C3A2844BAAD00435401 /* TestClass.h */,
+				D9FF8C3E2844BAAE00435401 /* TestClass.mm */,
+				D9FF8C3B2844BAAE00435401 /* TestDict.h */,
+				D9FF8C3D2844BAAE00435401 /* TestDict.m */,
+				D9FF8C432844BAAF00435401 /* TestFunction.h */,
+				D9FF8C392844BAAD00435401 /* TestFunction.mm */,
+				D9FF8C3F2844BAAE00435401 /* TestMacro.h */,
+				D9FF8C342844BAAD00435401 /* TestMacro.mm */,
+				D9FF8C3C2844BAAE00435401 /* TestRectZero.h */,
+				D9FF8C422844BAAF00435401 /* TestRectZero.mm */,
+				D9FF8C382844BAAD00435401 /* TestStaticClassMemberMutex.cpp */,
+				D9FF8C362844BAAD00435401 /* TestStaticClassMemberMutex.hpp */,
+				D9FF8C402844BAAE00435401 /* TestVarVar.h */,
+				D9FF8C412844BAAE00435401 /* TestVarVar.mm */,
+				D9FF8C322844BAAD00435401 /* TextVarVarC.c */,
+			);
+			path = TestCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,9 +464,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FF8C452844BAAF00435401 /* TextVarVarC.c in Sources */,
+				D9FF8C482844BAAF00435401 /* TestStaticClassMemberMutex.cpp in Sources */,
+				D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */,
+				D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */,
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
+				D9FF8C4D2844BAAF00435401 /* TestRectZero.mm in Sources */,
+				D9FF8C492844BAAF00435401 /* TestFunction.mm in Sources */,
+				D9FF8C4A2844BAAF00435401 /* TestDict.m in Sources */,
 				6003F5A7195388D20070C39A /* HDViewController.m in Sources */,
+				D9FF8C4C2844BAAF00435401 /* TestVarVar.mm in Sources */,
+				D9FF8C462844BAAF00435401 /* TestMacro.mm in Sources */,
+				D9FF8C472844BAAF00435401 /* TestCBlock.mm in Sources */,
 				D9B0D6C2283C674700515096 /* HDViewController+HDLoad.m in Sources */,
+				D9FF8C4B2844BAAF00435401 /* TestClass.mm in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +619,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
+					"-ObjC",
 					"$(inherited)",
 					"-framework",
 					"\"A00LaunchMeasure\"",
@@ -570,6 +649,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
+					"-ObjC",
 					"$(inherited)",
 					"-framework",
 					"\"A00LaunchMeasure\"",

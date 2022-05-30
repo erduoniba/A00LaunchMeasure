@@ -12,6 +12,9 @@
 		D9B0D6DA283C685900515096 /* HDLoadFrameworkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0D6D8283C685900515096 /* HDLoadFrameworkObj.m */; };
 		D9BDC38D283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.h in Headers */ = {isa = PBXBuildFile; fileRef = D9BDC38B283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.h */; };
 		D9BDC38E283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BDC38C283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.m */; };
+		D9FF8C132840D6E100435401 /* HDInitializerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D9FF8C122840D6E100435401 /* HDInitializerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9FF8C192840D7DD00435401 /* HDInitializerFrameworkObj.h in Headers */ = {isa = PBXBuildFile; fileRef = D9FF8C172840D7DD00435401 /* HDInitializerFrameworkObj.h */; };
+		D9FF8C1A2840D7DD00435401 /* HDInitializerFrameworkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C182840D7DD00435401 /* HDInitializerFrameworkObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +24,21 @@
 		D9B0D6D8283C685900515096 /* HDLoadFrameworkObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDLoadFrameworkObj.m; sourceTree = "<group>"; };
 		D9BDC38B283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDLoadFrameworkObj+HDLoad00.h"; sourceTree = "<group>"; };
 		D9BDC38C283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HDLoadFrameworkObj+HDLoad00.m"; sourceTree = "<group>"; };
+		D9FF8C102840D6E000435401 /* HDInitializerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HDInitializerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9FF8C122840D6E100435401 /* HDInitializerFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDInitializerFramework.h; sourceTree = "<group>"; };
+		D9FF8C172840D7DD00435401 /* HDInitializerFrameworkObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDInitializerFrameworkObj.h; sourceTree = "<group>"; };
+		D9FF8C182840D7DD00435401 /* HDInitializerFrameworkObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDInitializerFrameworkObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D9B0D6CA283C684100515096 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9FF8C0D2840D6E000435401 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B0D6CF283C684100515096 /* HDLoadFramework */,
+				D9FF8C112840D6E100435401 /* HDInitializerFramework */,
 				D9B0D6CE283C684100515096 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B0D6CD283C684100515096 /* HDLoadFramework.framework */,
+				D9FF8C102840D6E000435401 /* HDInitializerFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +78,16 @@
 			path = HDLoadFramework;
 			sourceTree = "<group>";
 		};
+		D9FF8C112840D6E100435401 /* HDInitializerFramework */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF8C122840D6E100435401 /* HDInitializerFramework.h */,
+				D9FF8C172840D7DD00435401 /* HDInitializerFrameworkObj.h */,
+				D9FF8C182840D7DD00435401 /* HDInitializerFrameworkObj.m */,
+			);
+			path = HDInitializerFramework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -72,6 +98,15 @@
 				D9B0D6D9283C685900515096 /* HDLoadFrameworkObj.h in Headers */,
 				D9BDC38D283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.h in Headers */,
 				D9B0D6D1283C684100515096 /* HDLoadFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9FF8C0B2840D6E000435401 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9FF8C192840D7DD00435401 /* HDInitializerFrameworkObj.h in Headers */,
+				D9FF8C132840D6E100435401 /* HDInitializerFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +131,24 @@
 			productReference = D9B0D6CD283C684100515096 /* HDLoadFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D9FF8C0F2840D6E000435401 /* HDInitializerFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9FF8C142840D6E100435401 /* Build configuration list for PBXNativeTarget "HDInitializerFramework" */;
+			buildPhases = (
+				D9FF8C0B2840D6E000435401 /* Headers */,
+				D9FF8C0C2840D6E000435401 /* Sources */,
+				D9FF8C0D2840D6E000435401 /* Frameworks */,
+				D9FF8C0E2840D6E000435401 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HDInitializerFramework;
+			productName = HDInitializerFramework;
+			productReference = D9FF8C102840D6E000435401 /* HDInitializerFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -106,6 +159,9 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					D9B0D6CC283C684100515096 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					D9FF8C0F2840D6E000435401 = {
 						CreatedOnToolsVersion = 13.2;
 					};
 				};
@@ -124,12 +180,20 @@
 			projectRoot = "";
 			targets = (
 				D9B0D6CC283C684100515096 /* HDLoadFramework */,
+				D9FF8C0F2840D6E000435401 /* HDInitializerFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D9B0D6CB283C684100515096 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9FF8C0E2840D6E000435401 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -145,6 +209,14 @@
 			files = (
 				D9BDC38E283DC0D1008CFED5 /* HDLoadFrameworkObj+HDLoad00.m in Sources */,
 				D9B0D6DA283C685900515096 /* HDLoadFrameworkObj.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9FF8C0C2840D6E000435401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9FF8C1A2840D7DD00435401 /* HDInitializerFrameworkObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +359,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDLoadFramework;
@@ -316,10 +388,62 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDLoadFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D9FF8C152840D6E100435401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDInitializerFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9FF8C162840D6E100435401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDInitializerFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -344,6 +468,15 @@
 			buildConfigurations = (
 				D9B0D6D5283C684100515096 /* Debug */,
 				D9B0D6D6283C684100515096 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9FF8C142840D6E100435401 /* Build configuration list for PBXNativeTarget "HDInitializerFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9FF8C152840D6E100435401 /* Debug */,
+				D9FF8C162840D6E100435401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

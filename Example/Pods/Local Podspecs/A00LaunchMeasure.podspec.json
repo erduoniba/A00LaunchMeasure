@@ -1,6 +1,6 @@
 {
   "name": "A00LaunchMeasure",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/erduoniba/A00LaunchMeasure",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/erduoniba/A00LaunchMeasure.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.0"

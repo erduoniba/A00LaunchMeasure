@@ -69,6 +69,7 @@ static IMP cat_getLoadMethodImp(Category cat) {
 }
 #pragma mark
 
+static void printLoadInfoWappers(void);
 
 // 包含load方法的类或者类别信息的类
 @interface LMLoadInfo () {
@@ -110,7 +111,7 @@ static IMP cat_getLoadMethodImp(Category cat) {
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@(%@) duration: %f milliseconds", _clsname, _catname, (_end - _start) * 1000];
+    return [NSString stringWithFormat:@"%@(%@) duration: %f ms", _clsname, _catname, (_end - _start) * 1000];
 }
 @end
 
@@ -155,6 +156,11 @@ static IMP cat_getLoadMethodImp(Category cat) {
 - (NSArray<LMLoadInfo *> *)infos {
     return _infoMap.allValues;
 }
+
++(void)printLoadInfoWappers {
+    printLoadInfoWappers();
+}
+
 @end
 
 
@@ -252,11 +258,11 @@ static void printLoadInfoWappers(void) {
     for (LMLoadInfo *info in infos) {
         totalDuration += info.duration;
     }
-    printf("\n\t\t\t\t\t\t\tTotal load time: %f milliseconds", totalDuration * 1000);
+    printf("\n\t\t\t\t\t\t\tTotal load time: %f ms", totalDuration * 1000);
     for (LMLoadInfo *info in infos) {
         NSString *clsname = [NSString stringWithFormat:@"%@", info.clsname];
         if (info.catname) clsname = [NSString stringWithFormat:@"%@(%@)", clsname, info.catname];
-        printf("\n%40s load time: %f milliseconds", [clsname cStringUsingEncoding:NSUTF8StringEncoding], info.duration * 1000);
+        printf("\n%40s load time: %f ms", [clsname cStringUsingEncoding:NSUTF8StringEncoding], info.duration * 1000);
     }
     printf("\n");
 }
@@ -272,7 +278,7 @@ retry:
             info->_start = CFAbsoluteTimeGetCurrent();
             ((void (*)(Class, SEL))objc_msgSend)(cls, hookSel);
             info->_end = CFAbsoluteTimeGetCurrent();
-            if (!--LMAllLoadNumber) printLoadInfoWappers();
+//            if (!--LMAllLoadNumber) printLoadInfoWappers();
         });
         
         BOOL didAddMethod = class_addMethod(metaCls, hookSel, hookImp, method_getTypeEncoding(method));
@@ -332,8 +338,7 @@ NSDictionary <NSString *, LMLoadInfoWrapper *> *prepareMeasureForMhdrList(const 
 // 使用C++的 __attribute__((constructor))  在main还是之前收集load方法耗时
 // 方法入口，因为该pod排名比较前，且为动态库，所以会优先执行
 __attribute__((constructor)) static void LoadMeasure_Initializer(void) {
-//    return;;
-    
+    NSLog(@"LoadMeasure_Initializer");
     CFAbsoluteTime begin = CFAbsoluteTimeGetCurrent();
     unsigned int count = 0;
     const struct mach_header **mhdrList = copyAllSelfDefinedImageHeader(&count);
@@ -347,5 +352,5 @@ __attribute__((constructor)) static void LoadMeasure_Initializer(void) {
     LMLoadInfoWappers = groupedWrapperMap.allValues;
     
     CFAbsoluteTime end = CFAbsoluteTimeGetCurrent();
-    printf("\n\t\t\t\t\tLoad Measure Initializer Time: %f milliseconds\n", (end - begin) * 1000);
+    NSLog(@"Load Measure Initializer Time: %f ms\n", (end - begin) * 1000);
 }

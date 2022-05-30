@@ -5,7 +5,7 @@
 //  Created by denglibing on 2022/5/25.
 //
 
-#import <HDLoadFramework/HDLoadFramework.h>
+#import "HDLoadFrameworkObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

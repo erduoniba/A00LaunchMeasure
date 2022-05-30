@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LMLoadInfoWrapper : NSObject
 @property (assign, nonatomic, readonly) Class cls;
 @property (copy, nonatomic, readonly) NSArray <LMLoadInfo *> *infos;
++(void)printLoadInfoWappers;
 @end
 
 extern NSArray <LMLoadInfoWrapper *> *LMLoadInfoWappers;
@@ -33,6 +34,7 @@ extern NSArray <LMLoadInfoWrapper *> *LMLoadInfoWappers;
  结论:
  1、可以收集到主工程所有的load方法并统计耗时；
  2、可以收集到静态库的所有load方法并统计耗时，静态库的分类需要在主工程的Other Linker Flags添加 -ObjC
+ 3、可以收集动态库所以load方法并统计耗时
  
  */
 

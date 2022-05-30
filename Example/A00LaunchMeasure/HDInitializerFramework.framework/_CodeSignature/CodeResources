@@ -4,56 +4,33 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/HDLoadFramework.h</key>
+		<key>Headers/HDInitializerFramework.h</key>
 		<data>
-		PXTCL5h2P9NsONQsuRSLRW2snsE=
-		</data>
-		<key>Headers/HDLoadFrameworkObj.h</key>
-		<data>
-		Yi0tmz+sO3IbASx5DFsj1NgdaUY=
+		emgq0cjUAwwGLCFoVEWKgm1mTDQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uDcyBxwTTct5XlXkXvVp3MVl48w=
+		+S1b5Y5MjqWUvQspJliLd2bDhcQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		BluJyIhwMfzszBnlcJtqlp9fBqY=
+		KtCP139Ou/DobaE3DWsOACxx5Ow=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/HDLoadFramework.h</key>
+		<key>Headers/HDInitializerFramework.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PXTCL5h2P9NsONQsuRSLRW2snsE=
-			</data>
 			<key>hash2</key>
 			<data>
-			aHBeJhSpo3QQlJoY9xjClMppB2mu2lnOtl9jCNemZ/Q=
-			</data>
-		</dict>
-		<key>Headers/HDLoadFrameworkObj.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Yi0tmz+sO3IbASx5DFsj1NgdaUY=
-			</data>
-			<key>hash2</key>
-			<data>
-			VaBBO5jv/CZfZ3sxV+mnFi5+0Qkv8eq/ufKUk6U/L+w=
+			7ZiGUS8H+1xeZORTZfBDEwpPE/aMcbv2WUho+Zr2dbc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			BluJyIhwMfzszBnlcJtqlp9fBqY=
-			</data>
 			<key>hash2</key>
 			<data>
-			IbIUnadM8Dfy+QBSmGJI9w+/f4QjTcagYO6FB9LQwR4=
+			T9TNDypNw81Vx5p2Xe1Gifw44j0B/H1NuZe/udAsias=
 			</data>
 		</dict>
 	</dict>

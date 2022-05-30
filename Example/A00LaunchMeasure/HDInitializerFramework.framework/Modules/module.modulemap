@@ -1,0 +1,6 @@
+framework module HDInitializerFramework {
+  umbrella header "HDInitializerFramework.h"
+
+  export *
+  module * { export * }
+}

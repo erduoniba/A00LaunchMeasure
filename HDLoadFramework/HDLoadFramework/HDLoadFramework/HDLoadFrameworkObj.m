@@ -18,6 +18,16 @@
     NSLog(@"ddd0");
 }
 
+__attribute__((constructor)) void HDLoadFrameworkObj_init(void) {
+    NSLog(@"HDLoadFrameworkObj constructor");
+    sleep(2);
+}
+
+__attribute__((constructor)) void HDLoadFrameworkObj_init2(void) {
+    NSLog(@"HDLoadFrameworkObj constructor2");
+    sleep(1);
+}
+
 @end
 
 

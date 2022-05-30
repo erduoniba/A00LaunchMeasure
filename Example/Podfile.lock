@@ -1,7 +1,7 @@
 PODS:
-  - A00LaunchMeasure (0.1.0):
-    - A00LaunchMeasure/LoadMeasure (= 0.1.0)
-  - A00LaunchMeasure/LoadMeasure (0.1.0)
+  - A00LaunchMeasure (0.1.1):
+    - A00LaunchMeasure/LoadMeasure (= 0.1.1)
+  - A00LaunchMeasure/LoadMeasure (0.1.1)
 
 DEPENDENCIES:
   - A00LaunchMeasure (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  A00LaunchMeasure: e5e20aa01de7e333b0f8f291b1d6423b72106f21
+  A00LaunchMeasure: 9117c747cb763ca46823509f1656bb3895d49de4
 
 PODFILE CHECKSUM: 62cfb23ecf1f60e7dfdadbe58dfa9d6fdbf513bc
 
