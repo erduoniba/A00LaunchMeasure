@@ -11,7 +11,7 @@
 @implementation HDInitializerTest
 
 __attribute__((constructor)) static void HDInitializerTest_Initializer(void) {
-    sleep(1);
+    usleep(1000 * 40);
     NSLog(@"HDInitializerTest_Initializer");
 }
 

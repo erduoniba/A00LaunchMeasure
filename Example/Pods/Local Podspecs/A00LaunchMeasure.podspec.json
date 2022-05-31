@@ -22,6 +22,10 @@
     {
       "name": "LoadMeasure",
       "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}"
+    },
+    {
+      "name": "TaskList",
+      "source_files": "A00LaunchMeasure/Classes/TaskList/*.{h,m}"
     }
   ]
 }

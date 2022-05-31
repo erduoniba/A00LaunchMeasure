@@ -32,6 +32,10 @@ TODO: Add long description of the pod here.
     loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
   end
   
+  s.subspec 'TaskList' do |taskList|
+    taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
+  end
+  
   # s.resource_bundles = {
   #   'A00LaunchMeasure' => ['A00LaunchMeasure/Assets/*.png']
   # }

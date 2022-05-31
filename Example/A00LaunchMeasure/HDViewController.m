@@ -9,6 +9,7 @@
 #import "HDViewController.h"
 
 #import <A00LaunchMeasure/A00LoadMeasure.h>
+#import <A00LaunchMeasure/HDLaunchTask.h>
 #import "A00CppInitMeasure.h"
 
 @interface HDViewController ()
@@ -19,7 +20,7 @@
 
 + (void)load {
     NSLog(@"HDViewController load");
-    sleep(2);
+    usleep(1000 * 50);
 }
 
 - (void)viewDidLoad
@@ -30,6 +31,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [LMLoadInfoWrapper printLoadInfoWappers];
         [A00CppInitMeasure printStaticInitializerTimer];
+        [HDLaunchTask printPostMainTime];
     });
 }
 

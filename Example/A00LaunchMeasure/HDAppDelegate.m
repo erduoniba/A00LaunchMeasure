@@ -8,6 +8,8 @@
 
 #import "HDAppDelegate.h"
 
+#import "HDLaunchTaskManager.h"
+
 @implementation HDAppDelegate
 
 + (void)load {
@@ -17,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [HDLaunchTaskManager run:application options:launchOptions];
+    
     return YES;
 }
 

@@ -11,6 +11,7 @@
 #endif
 
 #import "A00LoadMeasure.h"
+#import "HDLaunchTask.h"
 
 FOUNDATION_EXPORT double A00LaunchMeasureVersionNumber;
 FOUNDATION_EXPORT const unsigned char A00LaunchMeasureVersionString[];

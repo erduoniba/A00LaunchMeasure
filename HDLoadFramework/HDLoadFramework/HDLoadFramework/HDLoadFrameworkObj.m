@@ -11,7 +11,7 @@
 
 + (void)load {
     NSLog(@"HDLoadFrameworkObj load");
-    sleep(1);
+    usleep(1000 * 10);
 }
 
 + (void)ddd {
@@ -20,12 +20,12 @@
 
 __attribute__((constructor)) void HDLoadFrameworkObj_init(void) {
     NSLog(@"HDLoadFrameworkObj constructor");
-    sleep(2);
+    usleep(1000 * 20);
 }
 
 __attribute__((constructor)) void HDLoadFrameworkObj_init2(void) {
     NSLog(@"HDLoadFrameworkObj constructor2");
-    sleep(1);
+    usleep(1000 * 100);
 }
 
 @end
@@ -34,7 +34,7 @@ __attribute__((constructor)) void HDLoadFrameworkObj_init2(void) {
 @implementation HDLoadFrameworkObj (HDLoad0)
 + (void)load {
     NSLog(@"HDLoadFrameworkObj+HDLoad0 load");
-    sleep(2);
+    usleep(1000 * 200);
 }
 + (void)ddd2 {
     NSLog(@"ddd2");

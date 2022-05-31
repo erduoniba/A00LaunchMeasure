@@ -11,7 +11,7 @@
 
 + (void)load {
     NSLog(@"HDLoadFrameworkObj+HDLoad00 load");
-    sleep(3);
+    usleep(1000 * 300);
 }
 + (void)ddd4 {
     NSLog(@"ddd4");

@@ -15,7 +15,7 @@ __attribute__((constructor)) void HDLoadFrameworkObj_init(void) {
 
 __attribute__((constructor)) void HDLoadFrameworkObj_init2(void) {
     NSLog(@"HDInitializerFrameworkObj constructor2");
-    sleep(1);
+    usleep(1000 * 100);
 }
 
 @end

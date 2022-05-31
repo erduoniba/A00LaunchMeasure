@@ -12,7 +12,7 @@
 
 + (void)load {
     NSLog(@"HDViewController+HDLoad load");
-    sleep(1);
+    usleep(1000 * 10);
 }
 
 @end
