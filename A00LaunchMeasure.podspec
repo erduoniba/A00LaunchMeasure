@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                      0.1.1: 添加启动时刻的load方法和initializer方法耗时统计
+                      0.1.2: 添加简单的启动服务管理类
                        DESC
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
