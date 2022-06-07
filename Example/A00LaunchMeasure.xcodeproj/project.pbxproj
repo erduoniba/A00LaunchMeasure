@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,12 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C18FA941447083615EF409B0 /* Pods_A00LaunchMeasure_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75D2E4B00D9DCCDB28EA37 /* Pods_A00LaunchMeasure_Example.framework */; };
+		D906D445284F204E00F9F854 /* HDInitializerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D443284F204600F9F854 /* HDInitializerFramework.framework */; platformFilter = ios; };
+		D906D446284F204E00F9F854 /* HDInitializerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D443284F204600F9F854 /* HDInitializerFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D906D449284F211900F9F854 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; };
+		D906D44A284F211900F9F854 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D906D44D284F21B500F9F854 /* messier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D44B284F21A800F9F854 /* messier.framework */; platformFilter = ios; };
+		D906D44E284F21B500F9F854 /* messier.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D44B284F21A800F9F854 /* messier.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9B0D6C2283C674700515096 /* HDViewController+HDLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */; };
 		D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */; };
 		D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */; };
@@ -36,10 +42,6 @@
 		D9FF8C4B2844BAAF00435401 /* TestClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C3E2844BAAE00435401 /* TestClass.mm */; };
 		D9FF8C4C2844BAAF00435401 /* TestVarVar.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C412844BAAE00435401 /* TestVarVar.mm */; };
 		D9FF8C4D2844BAAF00435401 /* TestRectZero.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C422844BAAF00435401 /* TestRectZero.mm */; };
-		D9FF8C592844FC5500435401 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C552844FC3D00435401 /* HDLoadFramework.framework */; };
-		D9FF8C5A2844FC5500435401 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C552844FC3D00435401 /* HDLoadFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D9FF8C5B2844FC5600435401 /* HDInitializerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C572844FC4900435401 /* HDInitializerFramework.framework */; };
-		D9FF8C5C2844FC5600435401 /* HDInitializerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF8C572844FC4900435401 /* HDInitializerFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9FF8C652845B7BE00435401 /* HDLaunchDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C642845B7BE00435401 /* HDLaunchDemo.m */; };
 		D9FF8C682845B90900435401 /* HDLaunchTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C672845B90900435401 /* HDLaunchTaskManager.m */; };
 /* End PBXBuildFile section */
@@ -61,8 +63,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D9FF8C5C2844FC5600435401 /* HDInitializerFramework.framework in Embed Frameworks */,
-				D9FF8C5A2844FC5500435401 /* HDLoadFramework.framework in Embed Frameworks */,
+				D906D446284F204E00F9F854 /* HDInitializerFramework.framework in Embed Frameworks */,
+				D906D44A284F211900F9F854 /* HDLoadFramework.framework in Embed Frameworks */,
+				D906D44E284F21B500F9F854 /* messier.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,9 @@
 		C5A4B513CACFD7C0C72915BD /* Pods-A00LaunchMeasure_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A00LaunchMeasure_Tests.debug.xcconfig"; path = "Target Support Files/Pods-A00LaunchMeasure_Tests/Pods-A00LaunchMeasure_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFAEA6A1E68483AF7C8AC8C1 /* Pods-A00LaunchMeasure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A00LaunchMeasure_Example.release.xcconfig"; path = "Target Support Files/Pods-A00LaunchMeasure_Example/Pods-A00LaunchMeasure_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D2E454F2B0151D1CBFAC2487 /* Pods-A00LaunchMeasure_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A00LaunchMeasure_Example.debug.xcconfig"; path = "Target Support Files/Pods-A00LaunchMeasure_Example/Pods-A00LaunchMeasure_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D906D443284F204600F9F854 /* HDInitializerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDInitializerFramework.framework; sourceTree = "<group>"; };
+		D906D447284F211600F9F854 /* HDLoadFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDLoadFramework.framework; sourceTree = "<group>"; };
+		D906D44B284F21A800F9F854 /* messier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = messier.framework; sourceTree = "<group>"; };
 		D9B0D6C0283C674700515096 /* HDViewController+HDLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDViewController+HDLoad.h"; sourceTree = "<group>"; };
 		D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HDViewController+HDLoad.m"; sourceTree = "<group>"; };
 		D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = A00CppInitMeasure.mm; sourceTree = "<group>"; };
@@ -122,8 +128,6 @@
 		D9FF8C412844BAAE00435401 /* TestVarVar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestVarVar.mm; sourceTree = "<group>"; };
 		D9FF8C422844BAAF00435401 /* TestRectZero.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRectZero.mm; sourceTree = "<group>"; };
 		D9FF8C432844BAAF00435401 /* TestFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFunction.h; sourceTree = "<group>"; };
-		D9FF8C552844FC3D00435401 /* HDLoadFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDLoadFramework.framework; sourceTree = "<group>"; };
-		D9FF8C572844FC4900435401 /* HDInitializerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HDInitializerFramework.framework; sourceTree = "<group>"; };
 		D9FF8C632845B7BE00435401 /* HDLaunchDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDLaunchDemo.h; sourceTree = "<group>"; };
 		D9FF8C642845B7BE00435401 /* HDLaunchDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDLaunchDemo.m; sourceTree = "<group>"; };
 		D9FF8C662845B90900435401 /* HDLaunchTaskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDLaunchTaskManager.h; sourceTree = "<group>"; };
@@ -137,9 +141,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18FA941447083615EF409B0 /* Pods_A00LaunchMeasure_Example.framework in Frameworks */,
-				D9FF8C592844FC5500435401 /* HDLoadFramework.framework in Frameworks */,
-				D9FF8C5B2844FC5600435401 /* HDInitializerFramework.framework in Frameworks */,
+				D906D44D284F21B500F9F854 /* messier.framework in Frameworks */,
+				D906D449284F211900F9F854 /* HDLoadFramework.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
+				D906D445284F204E00F9F854 /* HDInitializerFramework.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 			);
@@ -211,8 +216,9 @@
 				D9FF8C292844B47900435401 /* StaticInitializerMeasure */,
 				6003F59C195388D20070C39A /* HDAppDelegate.h */,
 				6003F59D195388D20070C39A /* HDAppDelegate.m */,
-				D9FF8C552844FC3D00435401 /* HDLoadFramework.framework */,
-				D9FF8C572844FC4900435401 /* HDInitializerFramework.framework */,
+				D906D443284F204600F9F854 /* HDInitializerFramework.framework */,
+				D906D447284F211600F9F854 /* HDLoadFramework.framework */,
+				D906D44B284F21A800F9F854 /* messier.framework */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HDViewController.h */,
 				6003F5A6195388D20070C39A /* HDViewController.m */,
@@ -365,6 +371,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = denglibing5;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = TKRM4J3XJV;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -626,6 +636,9 @@
 			baseConfigurationReference = D2E454F2B0151D1CBFAC2487 /* Pods-A00LaunchMeasure_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TKRM4J3XJV;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/A00LaunchMeasure",
@@ -633,7 +646,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "A00LaunchMeasure/A00LaunchMeasure-Prefix.pch";
 				INFOPLIST_FILE = "A00LaunchMeasure/A00LaunchMeasure-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -643,6 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = JingxiDev_16;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -653,6 +671,9 @@
 			baseConfigurationReference = CFAEA6A1E68483AF7C8AC8C1 /* Pods-A00LaunchMeasure_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TKRM4J3XJV;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/A00LaunchMeasure",
@@ -660,7 +681,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "A00LaunchMeasure/A00LaunchMeasure-Prefix.pch";
 				INFOPLIST_FILE = "A00LaunchMeasure/A00LaunchMeasure-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -670,6 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = JingxiDev_16;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

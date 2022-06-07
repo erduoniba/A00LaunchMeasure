@@ -34,4 +34,25 @@ NS_ASSUME_NONNULL_BEGIN
         const修饰的变量：TestVarVar（0.000000 ms）
  */
 
+/*
+ 缺陷：无法使用动态库去统计相关数据耗时；https://www.jianshu.com/p/c14987eee107
+ 
+ if ( type == S_MOD_INIT_FUNC_POINTERS ) {
+     Initializer* inits = (Initializer*)(sect->addr + fSlide);
+     const size_t count = sect->size / sizeof(uintptr_t);
+     
+     for (size_t j=0; j < count; ++j) {
+         Initializer func = inits[j];
+         // <rdar://problem/8543820&9228031> verify initializers are in image
+         if ( ! this->containsAddress((void*)func) ) {
+             dyld::throwf("initializer function %p not in mapped image for %s\n", func, this->getPath());
+         }
+     
+         func(context.argc, context.argv, context.envp, context.apple, &context.programVars);
+     }
+ }
+ 
+ if ( ! this->containsAddress((void*)func) ) 这里会做一个判断，判断函数地址是否在当前 image 的地址空间中，因为我们是在一个独立的动态库中做函数地址替换，替换后的函数地址都是我们动态库中的，并没有在其他 image 中，所以当其他 image 执行到这个判断时，就抛出了异常。这个问题好像无解，所以我们的 C++ Static Initializers 时间统计稍有不足。
+ */
+
 NS_ASSUME_NONNULL_END

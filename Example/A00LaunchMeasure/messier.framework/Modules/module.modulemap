@@ -1,0 +1,6 @@
+framework module messier {
+  umbrella header "messier.h"
+
+  export *
+  module * { export * }
+}

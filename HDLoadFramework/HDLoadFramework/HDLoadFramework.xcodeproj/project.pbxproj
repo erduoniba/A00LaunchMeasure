@@ -6,6 +6,31 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D9A36B42284EF9930081C891 /* HDLoadMerge */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D9A36B45284EF9930081C891 /* Build configuration list for PBXAggregateTarget "HDLoadMerge" */;
+			buildPhases = (
+				D9A36B4A284EF9C60081C891 /* Merge */,
+			);
+			dependencies = (
+			);
+			name = HDLoadMerge;
+			productName = HDLoadMerge;
+		};
+		D9A36B46284EF9B00081C891 /* HDInitializerMerge */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D9A36B47284EF9B00081C891 /* Build configuration list for PBXAggregateTarget "HDInitializerMerge" */;
+			buildPhases = (
+				D9A36B51284F04040081C891 /* Merge */,
+			);
+			dependencies = (
+			);
+			name = HDInitializerMerge;
+			productName = HDInitializerMerge;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		D9B0D6D1283C684100515096 /* HDLoadFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B0D6D0283C684100515096 /* HDLoadFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9B0D6D9283C685900515096 /* HDLoadFrameworkObj.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B0D6D7283C685900515096 /* HDLoadFrameworkObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -158,6 +183,12 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					D9A36B42284EF9930081C891 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					D9A36B46284EF9B00081C891 = {
+						CreatedOnToolsVersion = 13.2;
+					};
 					D9B0D6CC283C684100515096 = {
 						CreatedOnToolsVersion = 13.2;
 					};
@@ -181,6 +212,8 @@
 			targets = (
 				D9B0D6CC283C684100515096 /* HDLoadFramework */,
 				D9FF8C0F2840D6E000435401 /* HDInitializerFramework */,
+				D9A36B42284EF9930081C891 /* HDLoadMerge */,
+				D9A36B46284EF9B00081C891 /* HDInitializerMerge */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +234,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9A36B4A284EF9C60081C891 /* Merge */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Merge;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nENV\necho \"==============\"\n\n#参数\n\nproject_name=\"HDLoadFramework\"\ntarget_name=\"HDLoadFramework\"\nframework_name=${target_name}\nbuild_dir=\"build\"\nout_dir=\"out\"\nconfiguration=\"Debug\" #Release/Debug\n\n# 清除缓存\nfunction build_clean {\n    echo \"======build_clean======\"\n    rm -rf ${build_dir}\n    rm -rf ${out_dir}\n}\n\n# 配置\nfunction build_config {\n    echo \"======build_config======\"\n    # build版本号：日期\n    build_version=`date +%y%m%d%H%M%S` \n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${build_version}\" ./${project_name}/info.plist\n\n    # build版本号：自增\n    # build_version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"./${project_name}/info.plist\" )\n\n    # build_version=$(($build_version + 1))\n    # /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${build_version}\" ./${project_name}/info.plist\n}\n\n# 编译\nfunction build_framework {\n   echo \"======build_framework======\"\n    # 若支持bitCode，需加参数：-fembed-bitcode\n    xcodebuild -project ${project_name}.xcodeproj -target ${target_name} -sdk iphoneos -configuration ${configuration} BUILD_DIR=\"./${build_dir}\" build || exit 1\n    xcodebuild -project ${project_name}.xcodeproj -target ${target_name} -sdk iphonesimulator -configuration ${configuration} BUILD_DIR=\"./${build_dir}\" build || exit 1\n}\n\n# 合并\nfunction build_fat_framework {\n    echo \"======build_fat_framework======\"\n    mkdir -p ${out_dir}/${configuration}\n\n    cp -R ${build_dir}/${configuration}-iphoneos/${framework_name}.framework ${out_dir}/${configuration}\n    lipo -create ${build_dir}/${configuration}-iphonesimulator/${framework_name}.framework/${framework_name} ${build_dir}/${configuration}-iphoneos/${framework_name}.framework/${framework_name} -output ${out_dir}/${configuration}/${framework_name}.framework/${framework_name} || exit 1\n}\n\n# 压缩\nfunction build_zip {\n    echo \"======build_zip======\"\n    cd ${out_dir}\n    time=`date +%y%m%d%H%M%S`\n    name=${framework_name}_${time}.zip\n    zip -r -m -o ${framework_name}.framework.zip ${framework_name}.framework || exit 1\n}\n\n# 调用\nbuild_clean\n# build_config\nbuild_framework\nbuild_fat_framework\n# build_zip\n\n";
+		};
+		D9A36B51284F04040081C891 /* Merge */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Merge;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nENV\necho \"==============\"\n\n#参数\n\nproject_name=\"HDLoadFramework\"\ntarget_name=\"HDInitializerFramework\"\nframework_name=${target_name}\nbuild_dir=\"build\"\nout_dir=\"out\"\nconfiguration=\"Debug\" #Release/Debug\n\n# 清除缓存\nfunction build_clean {\n    echo \"======build_clean======\"\n    rm -rf ${build_dir}\n    rm -rf ${out_dir}\n}\n\n# 配置\nfunction build_config {\n    echo \"======build_config======\"\n    # build版本号：日期\n    build_version=`date +%y%m%d%H%M%S` \n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${build_version}\" ./${project_name}/info.plist\n\n    # build版本号：自增\n    # build_version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"./${project_name}/info.plist\" )\n\n    # build_version=$(($build_version + 1))\n    # /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${build_version}\" ./${project_name}/info.plist\n}\n\n# 编译\nfunction build_framework {\n   echo \"======build_framework======\"\n    # 若支持bitCode，需加参数：-fembed-bitcode\n    xcodebuild -project ${project_name}.xcodeproj -target ${target_name} -sdk iphoneos -configuration ${configuration} BUILD_DIR=\"./${build_dir}\" build || exit 1\n    xcodebuild -project ${project_name}.xcodeproj -target ${target_name} -sdk iphonesimulator -configuration ${configuration} BUILD_DIR=\"./${build_dir}\" build || exit 1\n}\n\n# 合并\nfunction build_fat_framework {\n    echo \"======build_fat_framework======\"\n    mkdir -p ${out_dir}/${configuration}\n\n    cp -R ${build_dir}/${configuration}-iphoneos/${framework_name}.framework ${out_dir}/${configuration}\n    lipo -create ${build_dir}/${configuration}-iphonesimulator/${framework_name}.framework/${framework_name} ${build_dir}/${configuration}-iphoneos/${framework_name}.framework/${framework_name} -output ${out_dir}/${configuration}/${framework_name}.framework/${framework_name} || exit 1\n}\n\n# 压缩\nfunction build_zip {\n    echo \"======build_zip======\"\n    cd ${out_dir}\n    time=`date +%y%m%d%H%M%S`\n    name=${framework_name}_${time}.zip\n    zip -r -m -o ${framework_name}.framework.zip ${framework_name}.framework || exit 1\n}\n\n# 调用\nbuild_clean\n# build_config\nbuild_framework\nbuild_fat_framework\n# build_zip\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9B0D6C9283C684100515096 /* Sources */ = {
@@ -223,6 +295,39 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		D9A36B43284EF9930081C891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D9A36B44284EF9930081C891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D9A36B48284EF9B00081C891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D9A36B49284EF9B00081C891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D9B0D6D2283C684100515096 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -275,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -331,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -353,13 +458,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDLoadFramework;
@@ -382,13 +487,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.toolbardemo.HDLoadFramework;
@@ -411,6 +516,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +543,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +561,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D9A36B45284EF9930081C891 /* Build configuration list for PBXAggregateTarget "HDLoadMerge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A36B43284EF9930081C891 /* Debug */,
+				D9A36B44284EF9930081C891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9A36B47284EF9B00081C891 /* Build configuration list for PBXAggregateTarget "HDInitializerMerge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A36B48284EF9B00081C891 /* Debug */,
+				D9A36B49284EF9B00081C891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9B0D6C7283C684100515096 /* Build configuration list for PBXProject "HDLoadFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
