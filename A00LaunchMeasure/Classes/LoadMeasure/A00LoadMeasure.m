@@ -184,6 +184,7 @@ static const struct mach_header **copyAllSelfDefinedImageHeader(unsigned int *ou
         for (unsigned int i = 0; i < imageCount; i++) {
             const char *imageName = _dyld_get_image_name(i);
             if (isSelfDefinedImage(imageName)) {
+                printf("imageName: %s", imageName);
                 const struct mach_header *mhdr = _dyld_get_image_header(i);
                 mhdrList[count++] = mhdr;
             }

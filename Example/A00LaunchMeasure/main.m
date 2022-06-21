@@ -9,9 +9,13 @@
 @import UIKit;
 #import "HDAppDelegate.h"
 
+/*
+ 支持iOS15一下的真机使用
+ */
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([HDAppDelegate class]));
     }
 }
