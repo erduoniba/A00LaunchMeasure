@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QiCallTraceTimeCostModel.h"
+
+@class QiCallTraceTimeCostModel;
 
 NS_ASSUME_NONNULL_BEGIN
 

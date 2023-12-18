@@ -8,6 +8,8 @@
 
 #import "QiLagDB.h"
 
+#import "QiCallTraceTimeCostModel.h"
+
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 @interface QiLagDB()

@@ -32,12 +32,12 @@
     self.view.backgroundColor = [UIColor orangeColor];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [QiCallTrace stop];
+        [QiCallTrace save];
+        
         [LMLoadInfoWrapper printLoadInfoWappers];
         [A00CppInitMeasure printStaticInitializerTimer];
         [HDLaunchTask printPostMainTime];
-        
-        [QiCallTrace stop];
-        [QiCallTrace save];
     });
 }
 

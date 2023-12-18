@@ -6,10 +6,6 @@
 //  Copyright © 2019 QiShare. All rights reserved.
 //
 
-#ifndef QiCallTraceCore_h
-#define QiCallTraceCore_h
-
-#include <stdio.h>
 #include <objc/objc.h>
 
 typedef struct {
@@ -27,5 +23,3 @@ extern void qiCallConfigMaxDepth(int depth);  //default 3
 
 extern qiCallRecord *qiGetCallRecords(int *num);
 extern void qiClearCallRecords(void);
-
-#endif /* QiCallTraceCore_h */

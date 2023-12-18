@@ -21,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [QiCallTrace startWithMinCost:1];
+    [QiCallTrace startWithMinCost:5];
+//    [QiCallTrace start];
     
     [HDLaunchTaskManager run:application options:launchOptions];
     
