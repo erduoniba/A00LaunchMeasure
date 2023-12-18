@@ -55,7 +55,7 @@ typedef struct {
     bool is_main_thread;
 } thread_call_stack;
 
-static inline thread_call_stack * get_thread_call_stack() {
+static inline thread_call_stack * get_thread_call_stack(void) {
     thread_call_stack *cs = (thread_call_stack *)pthread_getspecific(_thread_key);
     if (cs == NULL) {
         cs = (thread_call_stack *)malloc(sizeof(thread_call_stack));
@@ -96,7 +96,7 @@ static inline void push_call_record(id _self, Class _cls, SEL _cmd, uintptr_t lr
     }
 }
 
-static inline uintptr_t pop_call_record() {
+static inline uintptr_t pop_call_record(void) {
     thread_call_stack *cs = get_thread_call_stack();
     int curIndex = cs->index;
     int nextIndex = cs->index--;
@@ -134,7 +134,7 @@ void before_objc_msgSend(id self, SEL _cmd, uintptr_t lr) {
     push_call_record(self, object_getClass(self), _cmd, lr);
 }
 
-uintptr_t after_objc_msgSend() {
+uintptr_t after_objc_msgSend(void) {
     return pop_call_record();
 }
 
@@ -175,7 +175,7 @@ __asm volatile ("ldp x8, lr, [sp], #16\n");
 #define ret() __asm volatile ("ret\n");
 
 __attribute__((__naked__))
-static void hook_Objc_msgSend() {
+static void hook_Objc_msgSend(void) {
     // Save parameters.
     save()
     
@@ -210,7 +210,7 @@ static void hook_Objc_msgSend() {
 
 #pragma mark public
 
-void qiCallTraceStart() {
+void qiCallTraceStart(void) {
     _call_record_enabled = true;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -221,7 +221,7 @@ void qiCallTraceStart() {
     });
 }
 
-void qiCallTraceStop() {
+void qiCallTraceStop(void) {
     _call_record_enabled = false;
 }
 
@@ -239,7 +239,7 @@ qiCallRecord *qiGetCallRecords(int *num) {
     return _qiCallRecords;
 }
 
-void qiClearCallRecords() {
+void qiClearCallRecords(void) {
     if (_qiCallRecords) {
         free(_qiCallRecords);
         _qiCallRecords = NULL;
@@ -248,6 +248,8 @@ void qiClearCallRecords() {
 }
 
 #else
+
+#pragma mark - 模拟器
 
 void qiCallTraceStart() {}
 void qiCallTraceStop() {}

@@ -7,6 +7,8 @@
 //
 
 #import "QiCallTrace.h"
+
+#import "QiCallTraceCore.h"
 #import "QiCallLib.h"
 #import "QiCallTraceTimeCostModel.h"
 #import "QiLagDB.h"

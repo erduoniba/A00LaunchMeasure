@@ -8,6 +8,8 @@
 
 #import "QiLagDB.h"
 
+#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
 @interface QiLagDB()
 
 @property (nonatomic, copy) NSString *clsCallDBPath;

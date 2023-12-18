@@ -8,16 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "QiCallTraceTimeCostModel.h"
-#import "QiCallStackModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-#define PATH_OF_APP_HOME    NSHomeDirectory()
-#define PATH_OF_TEMP        NSTemporaryDirectory()
-#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-
-#define CPUMONITORRATE 80
-#define STUCKMONITORRATE 88
 
 @interface QiLagDB : NSObject
 
