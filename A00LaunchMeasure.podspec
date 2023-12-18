@@ -37,6 +37,10 @@ Pod::Spec.new do |s|
     taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
   end
   
+  s.subspec 'AfterMeasure' do |afterMeasure|
+    afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
+  end
+  
   # s.resource_bundles = {
   #   'A00LaunchMeasure' => ['A00LaunchMeasure/Assets/*.png']
   # }

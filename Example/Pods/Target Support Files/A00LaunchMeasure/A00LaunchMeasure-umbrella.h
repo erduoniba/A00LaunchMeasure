@@ -10,6 +10,14 @@
 #endif
 #endif
 
+#import "fishhook.h"
+#import "QiCallLib.h"
+#import "QiCallStack.h"
+#import "QiCallStackModel.h"
+#import "QiCallTrace.h"
+#import "QiCallTraceCore.h"
+#import "QiCallTraceTimeCostModel.h"
+#import "QiLagDB.h"
 #import "A00LoadMeasure.h"
 #import "HDLaunchTask.h"
 

@@ -10,6 +10,8 @@
 
 #import "HDLaunchTaskManager.h"
 
+#import <A00LaunchMeasure/QiCallTrace.h>
+
 @implementation HDAppDelegate
 
 + (void)load {
@@ -19,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [QiCallTrace start];
     
     [HDLaunchTaskManager run:application options:launchOptions];
     

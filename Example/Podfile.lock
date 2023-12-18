@@ -1,9 +1,11 @@
 PODS:
-  - A00LaunchMeasure (0.1.1):
-    - A00LaunchMeasure/LoadMeasure (= 0.1.1)
-    - A00LaunchMeasure/TaskList (= 0.1.1)
-  - A00LaunchMeasure/LoadMeasure (0.1.1)
-  - A00LaunchMeasure/TaskList (0.1.1)
+  - A00LaunchMeasure (0.1.2):
+    - A00LaunchMeasure/AfterMeasure (= 0.1.2)
+    - A00LaunchMeasure/LoadMeasure (= 0.1.2)
+    - A00LaunchMeasure/TaskList (= 0.1.2)
+  - A00LaunchMeasure/AfterMeasure (0.1.2)
+  - A00LaunchMeasure/LoadMeasure (0.1.2)
+  - A00LaunchMeasure/TaskList (0.1.2)
 
 DEPENDENCIES:
   - A00LaunchMeasure (from `../`)
@@ -13,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  A00LaunchMeasure: 007f728524fd35140d67f73b929d468205e6d539
+  A00LaunchMeasure: 5f3cc020398732b69e06fa9d8a4852dfc4f257db
 
 PODFILE CHECKSUM: 62cfb23ecf1f60e7dfdadbe58dfa9d6fdbf513bc
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3
