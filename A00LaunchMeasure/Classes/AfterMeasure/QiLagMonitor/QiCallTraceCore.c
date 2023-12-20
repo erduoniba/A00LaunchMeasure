@@ -177,30 +177,55 @@ __asm volatile ("ldp x8, lr, [sp], #16\n");
 
 #define ret() __asm volatile ("ret\n");
 
+// 代码解析： https://juejin.cn/post/7076782932207075336
+// 因为objc_msgSend本身是基于汇编进行实现，所以hook的方法对于objc_msgSend相关的部分都必须是基于汇编来实现。
+// 用于告诉编译器生成的函数应该是“裸函数”（naked function）
+// 在裸函数中，编译器不会生成任何形式的函数入口和退出代码，
+// 这个函数必须非常小心地管理寄存器和其他状态，以避免破坏调用者的环境。
 __attribute__((__naked__))
 static void hook_Objc_msgSend(void) {
-    // Save parameters.
+    /*
+     保存objc_msgSend本身的方法栈信息。因为在objc_msgSend方法执行前，我们会执行方法before_objc_msgSend，从而对寄存器造成污染，为了确保能够正确的执行objc_msgSend方法，需要对当前的寄存器状态进行保存，等我们的方法执行完毕后，再对寄存器进行恢复，从而保证OC方法的正确执行。
+     */
     save()
     
+    //将objc_msgSend执行的下一个函数地址传递给before_objc_msgSend的第二个参数x0 self, x1 _cmd, x2: lr address
     __asm volatile ("mov x2, lr\n");
     __asm volatile ("mov x3, x4\n");
     
-    // Call our before_objc_msgSend.
+    /*
+     通过blr汇编语句，执行before_objc_msgSend方法，从而在OC方法执行前，记录方法开始的时间
+     作用：获取当前堆栈信息、更新记录的开始执行时间到堆栈信息中
+     */
     call(blr, &before_objc_msgSend)
     
-    // Load parameters.
+    // 恢复我们通过save()保存的objc_msgSend方法信息。
     load()
     
-    // Call through to the original objc_msgSend.
+    // 调用原始的objc_msgSend，开始OC方法的执行。
     call(blr, orig_objc_msgSend)
     
-    // Save original objc_msgSend return value.
+    /*
+     和之前的save()原因一样，这里是因为objc_msgSend方法执行完毕后，
+     我们需要记录结束时间，会对寄存器造成污染，
+     所以需要在after_objc_msgSend方法执行前，对寄存器状态进行保存。
+     */
     save()
     
-    // Call our after_objc_msgSend.
+    /*
+     通过汇编语句，调用after_objc_msgSend方法，进行方法的耗时的计算，并将函数信息和耗时存储到dtp_records中。
+     找到缓存中当前堆栈信息
+     读取之前缓存的执行时间
+     计算出方法的耗时
+     生成一条记录记录方法信息和耗时
+     更新：记录该方法的调用信息，用于回溯方法调用链
+     更新记录到dtp_records中
+     */
     call(blr, &after_objc_msgSend)
     
-    // restore lr
+    /*
+     恢复寄存器x0的内容到lr中，还原hook_objc_msgSend的lr寄存器。
+     */
     __asm volatile ("mov lr, x0\n");
     
     // Load original objc_msgSend return value.

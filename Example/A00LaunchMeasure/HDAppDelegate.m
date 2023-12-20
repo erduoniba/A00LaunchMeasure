@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // 默认是 1ms
     [QiCallTrace startWithMinCost:5];
 //    [QiCallTrace start];
     
