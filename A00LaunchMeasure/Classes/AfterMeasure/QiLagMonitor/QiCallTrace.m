@@ -92,6 +92,12 @@
         model.isClassMethod = class_isMetaClass(rd->cls);
         model.timeCost = (double)rd->time / 1000000.0;
         model.callDepth = rd->depth;
+        model.lr = rd->lr;
+        
+        if (rd->caller_record != NULL) {
+            model.callerLr = rd->caller_record->lr;
+        }
+        
         [arr addObject:model];
     }
     NSUInteger count = arr.count;
@@ -101,14 +107,16 @@
             [arr removeObjectAtIndex:i];
             //Todo:不需要循环，直接设置下一个，然后判断好边界就行
             for (NSUInteger j = i; j < count - 1; j++) {
-                //下一个深度小的话就开始将后面的递归的往 sub array 里添加
-                if (arr[j].callDepth + 1 == model.callDepth) {
+                // 需要根据调用链路来关联，递归的往 sub array 里添加
+                if (arr[j].lr == model.callerLr) {
                     NSMutableArray *sub = (NSMutableArray *)arr[j].subCosts;
                     if (!sub) {
                         sub = [NSMutableArray new];
                         arr[j].subCosts = sub;
                     }
-                    [sub insertObject:model atIndex:0];
+                    if (![sub containsObject:model]) {
+                        [sub insertObject:model atIndex:0];
+                    }
                 }
             }
             i--;

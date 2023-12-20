@@ -31,12 +31,13 @@ static qiCallRecord *_qiCallRecords;
 static int _qiRecordNum;
 static int _qiRecordAlloc;
 
-typedef struct {
+typedef struct thread_call_record {
     id self; //通过 object_getClass 能够得到 Class 再通过 NSStringFromClass 能够得到类名
     Class cls;
     SEL cmd; //通过 NSStringFromSelector 方法能够得到方法名
     uint64_t time; //us
     uintptr_t lr; // link register
+    struct thread_call_record *caller_record; // 调用该方法的信息
 } thread_call_record;
 
 typedef struct {
@@ -79,6 +80,9 @@ static inline void push_call_record(id _self, Class _cls, SEL _cmd, uintptr_t lr
         newRecord->cls = _cls;
         newRecord->cmd = _cmd;
         newRecord->lr = lr;
+        if (nextIndex > 0) {
+            newRecord->caller_record = cs->stack;
+        }
         if (cs->is_main_thread && _call_record_enabled) {
             struct timeval now;
             gettimeofday(&now, NULL);
@@ -116,6 +120,14 @@ static inline uintptr_t pop_call_record(void) {
             log->depth = curIndex;
             log->sel = pRecord->cmd;
             log->time = cost;
+            log->lr = pRecord->lr;
+            if (pRecord->caller_record != NULL) {
+                qiCallRecord *caller_record = (qiCallRecord *)malloc(sizeof(qiCallRecord));
+                caller_record->cls = pRecord->caller_record->cls;
+                caller_record->sel = pRecord->caller_record->cmd;
+                caller_record->lr = pRecord->caller_record->lr;
+                log->caller_record = caller_record;
+            }
         }
     }
     return pRecord->lr;

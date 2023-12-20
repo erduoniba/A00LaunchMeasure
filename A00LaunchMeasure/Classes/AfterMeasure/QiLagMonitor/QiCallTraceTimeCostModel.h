@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSUInteger frequency;      //访问频次
 @property (nonatomic, strong) NSArray <QiCallTraceTimeCostModel *> *subCosts;
 
+// 用于找到方法的调用者，形成方法调用链路
+@property (nonatomic, assign) uintptr_t lr;              // 自身的 Link Register
+@property (nonatomic, assign) uintptr_t callerLr;        // 调用者的 Link Register
+
 - (NSString *)des;
 
 @end

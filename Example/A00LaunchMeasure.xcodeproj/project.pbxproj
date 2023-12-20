@@ -28,8 +28,6 @@
 		D906D446284F204E00F9F854 /* HDInitializerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D443284F204600F9F854 /* HDInitializerFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D906D449284F211900F9F854 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; };
 		D906D44A284F211900F9F854 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D906D44D284F21B500F9F854 /* messier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D44B284F21A800F9F854 /* messier.framework */; platformFilter = ios; };
-		D906D44E284F21B500F9F854 /* messier.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D44B284F21A800F9F854 /* messier.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9B0D6C2283C674700515096 /* HDViewController+HDLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */; };
 		D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */; };
 		D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */; };
@@ -65,7 +63,6 @@
 			files = (
 				D906D446284F204E00F9F854 /* HDInitializerFramework.framework in Embed Frameworks */,
 				D906D44A284F211900F9F854 /* HDLoadFramework.framework in Embed Frameworks */,
-				D906D44E284F21B500F9F854 /* messier.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18FA941447083615EF409B0 /* Pods_A00LaunchMeasure_Example.framework in Frameworks */,
-				D906D44D284F21B500F9F854 /* messier.framework in Frameworks */,
 				D906D449284F211900F9F854 /* HDLoadFramework.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				D906D445284F204E00F9F854 /* HDInitializerFramework.framework in Frameworks */,
