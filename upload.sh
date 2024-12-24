@@ -22,7 +22,7 @@ echo "NewVersionNumber: ${NewVersionNumber}"
 LineNumber=`grep -nE 's.version.*=' A00LaunchMeasure.podspec | cut -d : -f1`
 
 git add .
-git commit -am modification
+git commit -m $1
 git pull origin master --tags
 
 sed -i "" "${LineNumber}s/${VersionNumber}/${NewVersionNumber}/g" A00LaunchMeasure.podspec
