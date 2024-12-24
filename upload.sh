@@ -16,11 +16,11 @@ git add .
 git commit -am modification
 git pull origin master --tags
 
-sed -i "" "${LineNumber}s/${VersionNumber}/${NewVersionNumber}/g" CTMediator.podspec
+sed -i "" "${LineNumber}s/${VersionNumber}/${NewVersionNumber}/g" A00LaunchMeasure.podspec
 
 echo "current version is ${VersionNumber}, new version is ${NewVersionNumber}"
 
 git commit -am ${NewVersionNumber}
 git tag ${NewVersionNumber}
 git push origin master --tags
-pod trunk push ./CTMediator.podspec --verbose --use-libraries --allow-warnings
+pod trunk push ./A00LaunchMeasure.podspec --verbose --use-libraries --allow-warnings
