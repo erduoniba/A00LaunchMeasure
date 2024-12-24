@@ -5,8 +5,11 @@ git pull origin master --tags
 git stash pop
 
 VersionString=`grep -E 's.version.*=' CTMediator.podspec`
+echo "VersionString: ${VersionString}"
 VersionNumber=`tr -cd 0-9 <<<"$VersionString"`
 NewVersionNumber=$(($VersionNumber + 1))
+echo "NewVersionNumber: ${NewVersionNumber}"
+
 LineNumber=`grep -nE 's.version.*=' CTMediator.podspec | cut -d : -f1`
 
 git add .
