@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -688,7 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = JingxiDev_16;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = JingxiDev_18;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = JDLTDev_10_12;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -725,7 +725,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = JingxiDev_16;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = JingxiDev_18;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = JDLTDev_10_12;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

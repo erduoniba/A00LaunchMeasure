@@ -38,10 +38,19 @@
         [QiCallTrace stop];
         [QiCallTrace save];
         
+        // 打印load方法耗时
         [LMLoadInfoWrapper printLoadInfoWappers];
+        
+        // 打印  C++ static initializer 方法耗时
         [A00CppInitMeasure printStaticInitializerTimer];
+        
+        // 打印启动任务项耗时
         [HDLaunchTask printPostMainTime];
     });
+    
+    [UIApplication.sharedApplication openURL:[NSURL URLWithString:@"openjdlite://virtual?params=%7B%22category%22%3A%22jump%22%2C%22des%22%3A%22productDetail%22%2C%22skuId%22%3A%2240420036170%22%7D"] options:@{} completionHandler:^(BOOL success) {
+        
+    }];
 }
 
 - (void)test1_1 {

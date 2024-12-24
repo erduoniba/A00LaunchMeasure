@@ -20,9 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /*
+ 一种 hook C++ static initializers 的方法
+ 
  注意点：
  1、该文件需要添加到主工程中，或者封装成静态库使用；
- 2、因为第一个特性，所以无法统计到工程中动态库的耗时数据；
+ 2、因为上面的特性，所以无法统计到工程中动态库的耗时数据；（原因：dyld 会优先初始化动态库，然后初始化 App 的可执行文件。）
  3、需要将该文件放在编译最前的位置进行统计
  4、TestCode中有常用的 Initializer 方法：
     4.1 析构函数：HDInitializerTest （0.128031 ms）

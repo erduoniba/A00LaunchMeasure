@@ -13,6 +13,14 @@
 #include <objc/runtime.h>
 #include <mach-o/getsect.h>
 
+@interface LMLoadInfo : NSObject
+@property (copy, nonatomic, readonly) NSString *clsname;
+@property (copy, nonatomic, readonly) NSString *catname;
+@property (assign, nonatomic, readonly) CFAbsoluteTime start;
+@property (assign, nonatomic, readonly) CFAbsoluteTime end;
+@property (assign, nonatomic, readonly) CFAbsoluteTime duration;
+@end
+
 NSArray <LMLoadInfoWrapper *> *LMLoadInfoWappers = nil;
 static NSInteger LMAllLoadNumber = 0;
 
@@ -121,6 +129,10 @@ static void printLoadInfoWappers(void);
     @package
     NSMutableDictionary <NSNumber *, LMLoadInfo *> *_infoMap;
 }
+
+@property (assign, nonatomic, readonly) Class cls;
+@property (copy, nonatomic, readonly) NSArray <LMLoadInfo *> *infos;
+
 - (instancetype)initWithClass:(Class)cls;
 - (void)addLoadInfo:(LMLoadInfo *)info;
 - (LMLoadInfo *)findLoadInfoByImp:(IMP)imp;
@@ -336,7 +348,7 @@ NSDictionary <NSString *, LMLoadInfoWrapper *> *prepareMeasureForMhdrList(const 
     return wrapperMap;
 }
 
-// 使用C++的 __attribute__((constructor))  在main还是之前收集load方法耗时
+// 使用C++的 __attribute__((constructor))  在main之前收集load方法耗时
 // 方法入口，因为该pod排名比较前，且为动态库，所以会优先执行
 __attribute__((constructor)) static void LoadMeasure_Initializer(void) {
     NSLog(@"LoadMeasure_Initializer");
