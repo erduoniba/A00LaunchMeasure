@@ -29,7 +29,7 @@ sed -i "" "${LineNumber}s/${VersionNumber}/${NewVersionNumber}/g" A00LaunchMeasu
 
 echo "current version is ${VersionNumber}, new version is ${NewVersionNumber}"
 
-# git commit -am ${NewVersionNumber}
-# git tag ${NewVersionNumber}
-# git push origin master --tags
-# pod trunk push ./A00LaunchMeasure.podspec --verbose --use-libraries --allow-warnings
+git commit -am ${NewVersionNumber}
+git tag ${NewVersionNumber}
+git push origin master --tags
+pod trunk push ./A00LaunchMeasure.podspec --verbose --use-libraries --allow-warnings
