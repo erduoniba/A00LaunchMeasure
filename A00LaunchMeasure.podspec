@@ -25,10 +25,13 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'denglibing5' => 'denglibing3@jd.com' }
+  s.author           = { 'denglibing' => 'denglibing@hd.com' }
   s.source           = { :git => 'https://github.com/erduoniba/A00LaunchMeasure.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
+  
+  # 设置为动态库
+  s.static_framework = false
   
   s.subspec 'LoadMeasure' do |loadMeasure|
     loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
