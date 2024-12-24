@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
