@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '0.1.5'
+  s.version          = '1.0.0'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
                       0.1.2: 添加简单的启动服务管理类
                       0.1.3: 添加AfterMeasure用于测量启动后的函数耗时
                       0.1.4: 设置该组件默认是动态库
+                      1.0.0: 升级大版本，无代码变动
                        DESC
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
