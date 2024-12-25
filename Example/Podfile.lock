@@ -1,22 +1,29 @@
 PODS:
-  - A00LaunchMeasure (0.1.2):
-    - A00LaunchMeasure/AfterMeasure (= 0.1.2)
-    - A00LaunchMeasure/LoadMeasure (= 0.1.2)
-    - A00LaunchMeasure/TaskList (= 0.1.2)
-  - A00LaunchMeasure/AfterMeasure (0.1.2)
-  - A00LaunchMeasure/LoadMeasure (0.1.2)
-  - A00LaunchMeasure/TaskList (0.1.2)
+  - A00CppInitMeasure (0.1.0)
+  - A00LaunchMeasure (1.0.0):
+    - A00LaunchMeasure/AfterMeasure (= 1.0.0)
+    - A00LaunchMeasure/LoadMeasure (= 1.0.0)
+    - A00LaunchMeasure/TaskList (= 1.0.0)
+  - A00LaunchMeasure/AfterMeasure (1.0.0)
+  - A00LaunchMeasure/LoadMeasure (1.0.0)
+  - A00LaunchMeasure/TaskList (1.0.0)
 
 DEPENDENCIES:
+  - A00CppInitMeasure
   - A00LaunchMeasure (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - A00CppInitMeasure
 
 EXTERNAL SOURCES:
   A00LaunchMeasure:
     :path: "../"
 
 SPEC CHECKSUMS:
-  A00LaunchMeasure: 5f3cc020398732b69e06fa9d8a4852dfc4f257db
+  A00CppInitMeasure: f4c0c818ee40aa7c0fe89ba898809ad6bdb783af
+  A00LaunchMeasure: 95dc0dc3d01b851fae1d382ff51a5cd94dc4aaa0
 
-PODFILE CHECKSUM: 62cfb23ecf1f60e7dfdadbe58dfa9d6fdbf513bc
+PODFILE CHECKSUM: c43d63bb67a4c9107b73353f2ecc82b58392af49
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.1

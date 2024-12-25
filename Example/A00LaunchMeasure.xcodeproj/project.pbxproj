@@ -29,7 +29,6 @@
 		D906D449284F211900F9F854 /* HDLoadFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; };
 		D906D44A284F211900F9F854 /* HDLoadFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D906D447284F211600F9F854 /* HDLoadFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9B0D6C2283C674700515096 /* HDViewController+HDLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */; };
-		D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */; };
 		D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */; };
 		D9FF8C452844BAAF00435401 /* TextVarVarC.c in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C322844BAAD00435401 /* TextVarVarC.c */; };
 		D9FF8C462844BAAF00435401 /* TestMacro.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9FF8C342844BAAD00435401 /* TestMacro.mm */; };
@@ -104,8 +103,6 @@
 		D906D44B284F21A800F9F854 /* messier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = messier.framework; sourceTree = "<group>"; };
 		D9B0D6C0283C674700515096 /* HDViewController+HDLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDViewController+HDLoad.h"; sourceTree = "<group>"; };
 		D9B0D6C1283C674700515096 /* HDViewController+HDLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HDViewController+HDLoad.m"; sourceTree = "<group>"; };
-		D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = A00CppInitMeasure.mm; sourceTree = "<group>"; };
-		D9FF8C2B2844B47A00435401 /* A00CppInitMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A00CppInitMeasure.h; sourceTree = "<group>"; };
 		D9FF8C2E2844B8CC00435401 /* HDInitializerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDInitializerTest.h; sourceTree = "<group>"; };
 		D9FF8C2F2844B8CC00435401 /* HDInitializerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDInitializerTest.m; sourceTree = "<group>"; };
 		D9FF8C322844BAAD00435401 /* TextVarVarC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TextVarVarC.c; sourceTree = "<group>"; };
@@ -271,8 +268,6 @@
 		D9FF8C292844B47900435401 /* StaticInitializerMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				D9FF8C2B2844B47A00435401 /* A00CppInitMeasure.h */,
-				D9FF8C2A2844B47900435401 /* A00CppInitMeasure.mm */,
 				D9FF8C2D2844B87600435401 /* TestCode */,
 			);
 			path = StaticInitializerMeasure;
@@ -490,7 +485,6 @@
 			files = (
 				D9FF8C452844BAAF00435401 /* TextVarVarC.c in Sources */,
 				D9FF8C482844BAAF00435401 /* TestStaticClassMemberMutex.cpp in Sources */,
-				D9FF8C2C2844B47A00435401 /* A00CppInitMeasure.mm in Sources */,
 				D9FF8C302844B8CC00435401 /* HDInitializerTest.m in Sources */,
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
 				D9FF8C652845B7BE00435401 /* HDLaunchDemo.m in Sources */,

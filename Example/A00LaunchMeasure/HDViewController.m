@@ -11,6 +11,7 @@
 #import <A00LaunchMeasure/A00LoadMeasure.h>
 #import <A00LaunchMeasure/HDLaunchTask.h>
 #import <A00LaunchMeasure/QiCallTrace.h>
+#import <A00CppInitMeasure/A00CppInitMeasure.h>
 #import "A00CppInitMeasure.h"
 
 @interface HDViewController ()

@@ -1,0 +1,6 @@
+framework module A00CppInitMeasure {
+  umbrella header "A00CppInitMeasure-umbrella.h"
+
+  export *
+  module * { export * }
+}

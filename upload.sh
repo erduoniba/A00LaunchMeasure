@@ -31,5 +31,5 @@ echo "current version is ${VersionNumber}, new version is ${NewVersionNumber}"
 
 git commit -am ${NewVersionNumber}
 git tag ${NewVersionNumber}
-git push origin master --tags
+git push origin main --tags
 pod trunk push ./A00LaunchMeasure.podspec --verbose --use-libraries --allow-warnings

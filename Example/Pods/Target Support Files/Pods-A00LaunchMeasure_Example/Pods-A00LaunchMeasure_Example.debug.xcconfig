@@ -1,9 +1,10 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/A00LaunchMeasure"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/A00CppInitMeasure" "${PODS_CONFIGURATION_BUILD_DIR}/A00LaunchMeasure"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/A00LaunchMeasure/A00LaunchMeasure.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/A00CppInitMeasure/A00CppInitMeasure.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/A00LaunchMeasure/A00LaunchMeasure.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "A00LaunchMeasure"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "A00CppInitMeasure" -framework "A00LaunchMeasure"
+OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/A00CppInitMeasure" "-F${PODS_CONFIGURATION_BUILD_DIR}/A00LaunchMeasure"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
