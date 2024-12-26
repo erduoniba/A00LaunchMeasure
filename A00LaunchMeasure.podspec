@@ -49,7 +49,7 @@ Pod::Spec.new do |s|
         afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
       end
   else
-      s.vendored_frameworks = 'Example/build/A00LaunchMeasure.xcframework'
+      s.vendored_frameworks = './Example/build/A00LaunchMeasure.xcframework'
   end
   
   # s.resource_bundles = {
