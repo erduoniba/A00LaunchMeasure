@@ -35,16 +35,21 @@ Pod::Spec.new do |s|
   # 设置为动态库
   s.static_framework = false
   
-  s.subspec 'LoadMeasure' do |loadMeasure|
-    loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
-  end
-  
-  s.subspec 'TaskList' do |taskList|
-    taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
-  end
-  
-  s.subspec 'AfterMeasure' do |afterMeasure|
-    afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
+  if ENV['IS_SOURCE']
+      s.subspec 'LoadMeasure' do |loadMeasure|
+        loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
+        loadMeasure.library = 'c++'
+      end
+      
+      s.subspec 'TaskList' do |taskList|
+        taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
+      end
+      
+      s.subspec 'AfterMeasure' do |afterMeasure|
+        afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
+      end
+  else
+#      s.vendored_frameworks = 'Carthage/Build/iOS/SVProgressHUD.framework'
   end
   
   # s.resource_bundles = {

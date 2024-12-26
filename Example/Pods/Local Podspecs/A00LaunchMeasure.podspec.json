@@ -22,7 +22,8 @@
   "subspecs": [
     {
       "name": "LoadMeasure",
-      "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}"
+      "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}",
+      "libraries": "c++"
     },
     {
       "name": "TaskList",

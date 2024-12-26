@@ -13,7 +13,7 @@
 #include <objc/runtime.h>
 #include <mach-o/getsect.h>
 
-@interface LMLoadInfo : NSObject
+@interface A00LoadInfo : NSObject
 @property (copy, nonatomic, readonly) NSString *clsname;
 @property (copy, nonatomic, readonly) NSString *catname;
 @property (assign, nonatomic, readonly) CFAbsoluteTime start;
@@ -21,7 +21,7 @@
 @property (assign, nonatomic, readonly) CFAbsoluteTime duration;
 @end
 
-NSArray <LMLoadInfoWrapper *> *LMLoadInfoWappers = nil;
+NSArray <A00LoadInfoWrapper *> *LMLoadInfoWappers = nil;
 static NSInteger LMAllLoadNumber = 0;
 
 // copy from objc-runtime-new.h
@@ -80,7 +80,7 @@ static IMP cat_getLoadMethodImp(Category cat) {
 static void printLoadInfoWappers(void);
 
 // 包含load方法的类或者类别信息的类
-@interface LMLoadInfo () {
+@interface A00LoadInfo () {
     @package
     SEL _nSEL;
     IMP _oIMP;
@@ -92,7 +92,7 @@ static void printLoadInfoWappers(void);
 - (instancetype)initWithCategory:(Category)cat;
 @end
 
-@implementation LMLoadInfo
+@implementation A00LoadInfo
 - (instancetype)initWithClass:(Class)cls {
     if (!cls) return nil;
     if (self = [super init]) {
@@ -125,21 +125,21 @@ static void printLoadInfoWappers(void);
 
 
 // 记录所以load方法的类和类别，管理类
-@interface LMLoadInfoWrapper () {
+@interface A00LoadInfoWrapper () {
     @package
-    NSMutableDictionary <NSNumber *, LMLoadInfo *> *_infoMap;
+    NSMutableDictionary <NSNumber *, A00LoadInfo *> *_infoMap;
 }
 
 @property (assign, nonatomic, readonly) Class cls;
-@property (copy, nonatomic, readonly) NSArray <LMLoadInfo *> *infos;
+@property (copy, nonatomic, readonly) NSArray <A00LoadInfo *> *infos;
 
 - (instancetype)initWithClass:(Class)cls;
-- (void)addLoadInfo:(LMLoadInfo *)info;
-- (LMLoadInfo *)findLoadInfoByImp:(IMP)imp;
-- (LMLoadInfo *)findClassLoadInfo;
+- (void)addLoadInfo:(A00LoadInfo *)info;
+- (A00LoadInfo *)findLoadInfoByImp:(IMP)imp;
+- (A00LoadInfo *)findClassLoadInfo;
 @end
 
-@implementation LMLoadInfoWrapper
+@implementation A00LoadInfoWrapper
 - (instancetype)initWithClass:(Class)cls {
     if (self = [super init]) {
         _infoMap = [NSMutableDictionary dictionary];
@@ -148,16 +148,16 @@ static void printLoadInfoWappers(void);
     return self;
 }
 
-- (void)addLoadInfo:(LMLoadInfo *)info {
+- (void)addLoadInfo:(A00LoadInfo *)info {
     _infoMap[@((uintptr_t)info->_oIMP)] = info;
 }
 
-- (LMLoadInfo *)findLoadInfoByImp:(IMP)imp {
+- (A00LoadInfo *)findLoadInfoByImp:(IMP)imp {
     return _infoMap[@((uintptr_t)imp)];
 }
 
-- (LMLoadInfo *)findClassLoadInfo {
-    for (LMLoadInfo *info in _infoMap.allValues) {
+- (A00LoadInfo *)findClassLoadInfo {
+    for (A00LoadInfo *info in _infoMap.allValues) {
         if (!info.catname) {
             return info;
         }
@@ -165,7 +165,7 @@ static void printLoadInfoWappers(void);
     return nil;
 }
 
-- (NSArray<LMLoadInfo *> *)infos {
+- (NSArray<A00LoadInfo *> *)infos {
     return _infoMap.allValues;
 }
 
@@ -232,19 +232,19 @@ static void *getDataSection(const struct mach_header *mhdr, const char *sectname
 }
 
 // 直接通过 getsectiondata 函数，读取编译时期写入 mach-o 文件 DATA 段的 __objc_nlclslist 和 __objc_nlcatlist 节，这两节分别用来保存 no lazy class 列表和 no lazy category 列表，所谓的 no lazy 结构，就是定义了 +load 方法的类或分类
-static NSArray <LMLoadInfo *> *getNoLazyArray(const struct mach_header *mhdr) {
+static NSArray <A00LoadInfo *> *getNoLazyArray(const struct mach_header *mhdr) {
     NSMutableArray *noLazyArray = [NSMutableArray new];
     unsigned long bytes = 0;
     Category *cats = getDataSection(mhdr, "__objc_nlcatlist", &bytes);
     for (unsigned int i = 0; i < bytes / sizeof(Category); i++) {
-        LMLoadInfo *info = [[LMLoadInfo alloc] initWithCategory:cats[i]];
+        A00LoadInfo *info = [[A00LoadInfo alloc] initWithCategory:cats[i]];
         if (!shouldRejectClass(info.clsname)) [noLazyArray addObject:info];
     }
     
     bytes = 0;
     Class *clses = (Class *)getDataSection(mhdr, "__objc_nlclslist", &bytes);
     for (unsigned int i = 0; i < bytes / sizeof(Class); i++) {
-        LMLoadInfo *info = [[LMLoadInfo alloc] initWithClass:clses[i]];
+        A00LoadInfo *info = [[A00LoadInfo alloc] initWithClass:clses[i]];
         if (!shouldRejectClass(info.clsname)) [noLazyArray addObject:info];
     }
     return noLazyArray;
@@ -261,18 +261,18 @@ static SEL getRandomLoadSelector(void) {
 // 排序打印load方法耗时
 static void printLoadInfoWappers(void) {
     NSMutableArray *infos = [NSMutableArray array];
-    for (LMLoadInfoWrapper *infoWrapper in LMLoadInfoWappers) {
+    for (A00LoadInfoWrapper *infoWrapper in LMLoadInfoWappers) {
         [infos addObjectsFromArray:infoWrapper.infos];
     }
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"duration" ascending:NO];
     [infos sortUsingDescriptors:@[descriptor]];
     
     CFAbsoluteTime totalDuration = 0;
-    for (LMLoadInfo *info in infos) {
+    for (A00LoadInfo *info in infos) {
         totalDuration += info.duration;
     }
     printf("\n\t\t\t\t\t\t\tTotal load time: %f ms", totalDuration * 1000);
-    for (LMLoadInfo *info in infos) {
+    for (A00LoadInfo *info in infos) {
         NSString *clsname = [NSString stringWithFormat:@"%@", info.clsname];
         if (info.catname) clsname = [NSString stringWithFormat:@"%@(%@)", clsname, info.catname];
         printf("\n%40s load time: %f ms", [clsname cStringUsingEncoding:NSUTF8StringEncoding], info.duration * 1000);
@@ -281,7 +281,7 @@ static void printLoadInfoWappers(void) {
 }
 
 // 方法交换，生成随机SEL和load进行交换
-static void swizzleLoadMethod(Class cls, Method method, LMLoadInfo *info) {
+static void swizzleLoadMethod(Class cls, Method method, A00LoadInfo *info) {
 retry:
     do {
         SEL hookSel = getRandomLoadSelector();
@@ -304,7 +304,7 @@ retry:
 }
 
 // 获得了拥有 +load 方法的类和分类，就可以 hook 对应的 +load 方法了
-static void hookAllLoadMethods(LMLoadInfoWrapper *infoWrapper) {
+static void hookAllLoadMethods(A00LoadInfoWrapper *infoWrapper) {
     unsigned int count = 0;
     Class metaCls = object_getClass(infoWrapper.cls);
     Method *methodList = class_copyMethodList(metaCls, &count);
@@ -314,7 +314,7 @@ static void hookAllLoadMethods(LMLoadInfoWrapper *infoWrapper) {
         const char *name = sel_getName(sel);
         if (!strcmp(name, "load")) {
             IMP imp = method_getImplementation(method);
-            LMLoadInfo *info = [infoWrapper findLoadInfoByImp:imp];
+            A00LoadInfo *info = [infoWrapper findLoadInfoByImp:imp];
             if (!info) {
                 info = [infoWrapper findClassLoadInfo];
                 if (!info) continue;
@@ -327,19 +327,19 @@ static void hookAllLoadMethods(LMLoadInfoWrapper *infoWrapper) {
 }
 
 // 获取app中所有有load方法的信息，key：类名，value：load相关信息（数组）
-NSDictionary <NSString *, LMLoadInfoWrapper *> *prepareMeasureForMhdrList(const struct mach_header **mhdrList, unsigned int  count) {
-    NSMutableDictionary <NSString *, LMLoadInfoWrapper *> *wrapperMap = [NSMutableDictionary dictionary];
+NSDictionary <NSString *, A00LoadInfoWrapper *> *prepareMeasureForMhdrList(const struct mach_header **mhdrList, unsigned int  count) {
+    NSMutableDictionary <NSString *, A00LoadInfoWrapper *> *wrapperMap = [NSMutableDictionary dictionary];
     for (unsigned int i = 0; i < count; i++) {
         const struct mach_header *mhdr = mhdrList[i];
-        NSArray <LMLoadInfo *> *infos = getNoLazyArray(mhdr);
+        NSArray <A00LoadInfo *> *infos = getNoLazyArray(mhdr);
         
         LMAllLoadNumber += infos.count;
         
-        for (LMLoadInfo *info in infos) {
-            LMLoadInfoWrapper *infoWrapper = wrapperMap[info.clsname];
+        for (A00LoadInfo *info in infos) {
+            A00LoadInfoWrapper *infoWrapper = wrapperMap[info.clsname];
             if (!infoWrapper) {
                 Class cls = objc_getClass([info.clsname cStringUsingEncoding:NSUTF8StringEncoding]);
-                infoWrapper = [[LMLoadInfoWrapper alloc] initWithClass:cls];
+                infoWrapper = [[A00LoadInfoWrapper alloc] initWithClass:cls];
                 wrapperMap[info.clsname] = infoWrapper;
             }
             [infoWrapper addLoadInfo:info];
@@ -355,7 +355,7 @@ __attribute__((constructor)) static void LoadMeasure_Initializer(void) {
     CFAbsoluteTime begin = CFAbsoluteTimeGetCurrent();
     unsigned int count = 0;
     const struct mach_header **mhdrList = copyAllSelfDefinedImageHeader(&count);
-    NSDictionary <NSString *, LMLoadInfoWrapper *> *groupedWrapperMap = prepareMeasureForMhdrList(mhdrList, count);
+    NSDictionary <NSString *, A00LoadInfoWrapper *> *groupedWrapperMap = prepareMeasureForMhdrList(mhdrList, count);
     
     for (NSString *clsname in groupedWrapperMap.allKeys) {
         hookAllLoadMethods(groupedWrapperMap[clsname]);

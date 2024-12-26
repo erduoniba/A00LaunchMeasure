@@ -40,7 +40,7 @@
         [QiCallTrace save];
         
         // 打印load方法耗时
-        [LMLoadInfoWrapper printLoadInfoWappers];
+        [A00LoadInfoWrapper printLoadInfoWappers];
         
         // 打印  C++ static initializer 方法耗时
         [A00CppInitMeasure printStaticInitializerTimer];

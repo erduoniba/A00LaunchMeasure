@@ -11,10 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // https://github.com/tripleCC/Laboratory
 // https://triplecc.github.io/2019/05/27/%E8%AE%A1%E7%AE%97load%E8%80%97%E6%97%B6/
-
-@class LMLoadInfo;
-
-@interface LMLoadInfoWrapper : NSObject
+@interface A00LoadInfoWrapper : NSObject
 +(void)printLoadInfoWappers;
 @end
 
