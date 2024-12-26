@@ -1,12 +1,6 @@
 PODS:
   - A00CppInitMeasure (0.1.0)
-  - A00LaunchMeasure (1.0.0):
-    - A00LaunchMeasure/AfterMeasure (= 1.0.0)
-    - A00LaunchMeasure/LoadMeasure (= 1.0.0)
-    - A00LaunchMeasure/TaskList (= 1.0.0)
-  - A00LaunchMeasure/AfterMeasure (1.0.0)
-  - A00LaunchMeasure/LoadMeasure (1.0.0)
-  - A00LaunchMeasure/TaskList (1.0.0)
+  - A00LaunchMeasure (1.0.0)
 
 DEPENDENCIES:
   - A00CppInitMeasure
@@ -22,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   A00CppInitMeasure: f4c0c818ee40aa7c0fe89ba898809ad6bdb783af
-  A00LaunchMeasure: 26e6959ca1768d79394cf78f89d9b4c4d9cae4b0
+  A00LaunchMeasure: 6f137042cd7a13d2bc9b1c4e9cac22253dc21404
 
 PODFILE CHECKSUM: c43d63bb67a4c9107b73353f2ecc82b58392af49
 

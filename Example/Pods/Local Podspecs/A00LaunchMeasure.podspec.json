@@ -19,19 +19,5 @@
     "ios": "9.0"
   },
   "static_framework": false,
-  "subspecs": [
-    {
-      "name": "LoadMeasure",
-      "source_files": "A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}",
-      "libraries": "c++"
-    },
-    {
-      "name": "TaskList",
-      "source_files": "A00LaunchMeasure/Classes/TaskList/*.{h,m}"
-    },
-    {
-      "name": "AfterMeasure",
-      "source_files": "A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}"
-    }
-  ]
+  "vendored_frameworks": "Example/build/A00LaunchMeasure.xcframework"
 }

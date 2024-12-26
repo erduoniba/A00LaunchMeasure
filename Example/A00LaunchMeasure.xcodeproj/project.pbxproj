@@ -421,7 +421,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-A00LaunchMeasure_Example/Pods-A00LaunchMeasure_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/A00LaunchMeasure/A00LaunchMeasure.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/A00LaunchMeasure/A00LaunchMeasure.framework/A00LaunchMeasure",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

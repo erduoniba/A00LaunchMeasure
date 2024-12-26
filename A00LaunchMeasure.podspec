@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
                       0.1.3: 添加AfterMeasure用于测量启动后的函数耗时
                       0.1.4: 设置该组件默认是动态库
                       1.0.0: 升级大版本，无代码变动
+                      1.0.1: 添加自动打包xcframework脚本，默认支持以动态库被App依赖
                        DESC
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
@@ -38,7 +39,6 @@ Pod::Spec.new do |s|
   if ENV['IS_SOURCE']
       s.subspec 'LoadMeasure' do |loadMeasure|
         loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
-        loadMeasure.library = 'c++'
       end
       
       s.subspec 'TaskList' do |taskList|
@@ -49,7 +49,7 @@ Pod::Spec.new do |s|
         afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
       end
   else
-#      s.vendored_frameworks = 'Carthage/Build/iOS/SVProgressHUD.framework'
+      s.vendored_frameworks = 'Example/build/A00LaunchMeasure.xcframework'
   end
   
   # s.resource_bundles = {

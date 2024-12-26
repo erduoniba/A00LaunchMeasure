@@ -20,9 +20,12 @@ it, simply add the following line to your Podfile:
 pod 'A00LaunchMeasure'
 ```
 
+使用 `IS_SOURCE=1 pod install` 进行安装，最终以源码依赖。（不主App中可能被强制改成静态库，导致统计无效）
+使用 `pod install` 进行安装，最终以动态库二进制依赖。（推荐）
+
 ## Author
 
-denglibing5, denglibing3@jd.com
+denglibing, denglibing@gmail.com
 
 ## License
 
