@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
       end
   else
       # https://github.com/CocoaPods/CocoaPods/issues/7942
-      s.vendored_frameworks = './Example/build/A00LaunchMeasure.xcframework'
+      s.vendored_frameworks = 'A00LaunchMeasure/Frameworks/A00LaunchMeasure.xcframework'
   end
   
   # s.resource_bundles = {
