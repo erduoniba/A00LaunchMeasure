@@ -6,24 +6,23 @@
 	objectVersion = 54;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0344C0C60BE64F5728B45BD963AC9219 /* A00LaunchMeasure */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 133E822D39A35CC11E5DCD7139DE2B32 /* Build configuration list for PBXAggregateTarget "A00LaunchMeasure" */;
-			buildPhases = (
-				E0B789AD1B6C549A6D934E8B3064C76A /* [CP] Copy XCFrameworks */,
-			);
-			dependencies = (
-			);
-			name = A00LaunchMeasure;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		006B2B712073526C963CFACF11EB871E /* A00CppInitMeasure.h in Headers */ = {isa = PBXBuildFile; fileRef = 32998BDE8E4FC72F43C9BEB275804967 /* A00CppInitMeasure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E8E03A42F84E9CF4B791FEC2E0FAF0 /* QiCallTraceCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E596AC085A2A857E1ED4C20DEB6AA85 /* QiCallTraceCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0814250F0A8532CE4E294F4C5D176FED /* Pods-A00LaunchMeasure_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3215916B8439E3E63B67A3FCB13F602E /* Pods-A00LaunchMeasure_Example-dummy.m */; };
+		164F386ED345C19695ED7E51F133BBC8 /* A00LoadMeasure.m in Sources */ = {isa = PBXBuildFile; fileRef = 690DBF31E3ADD2C46B12B29CD91A0038 /* A00LoadMeasure.m */; };
+		2083135510F4FD6D47877266F4900511 /* A00LoadMeasure.h in Headers */ = {isa = PBXBuildFile; fileRef = C6360F0FD008A425F0DF1FBE307D6D1F /* A00LoadMeasure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24F7E84E534B127BA64C37D21392C04F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		2BCC9B010F465C833D4CF2DF98E506F2 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 27AAB9442FD8C2D865B04064A47A7BF8 /* fishhook.c */; };
+		30F499201B663BBBF3B1807200FC0D5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		347B6015CBD5EA154C845B8227A99262 /* HDLaunchTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 0280044F8C4C524AA38142A3CBECA111 /* HDLaunchTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4057E6222FEE20D5839C5703FE1E2CA2 /* QiCallLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B2BECC906FCD74BC2EE1CB1868546503 /* QiCallLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D79D73A7D96F7D0D20EAA68E38F997F /* HDLaunchTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DF70577A30E178C024EE5B68E9B4A /* HDLaunchTask.m */; };
+		6A72818A4DA38567A07DE5D97B08F28D /* QiCallTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6FED5BF9DA31C0A008843205D6687C /* QiCallTrace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71E287D3735A8A371C942CBB64703B81 /* QiCallTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBD8A145E2C480996D2E679C2668190 /* QiCallTrace.m */; };
+		7214E7841625314C340FBF7E9949C9AF /* QiCallTraceTimeCostModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EAD475CF1330893E4A130DD5901099D /* QiCallTraceTimeCostModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D32982284A5032D029980E7C79161F3 /* A00CppInitMeasure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57DD350D91BC2966416CA88A3E130 /* A00CppInitMeasure-dummy.m */; };
+		80B26B1F8FB693E7FA9720A3A3E85C0E /* QiLagDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ADD059C3759D8F0ECDC7EDD4B8AB47 /* QiLagDB.m */; };
 		83FFC3BC71F559214A7ED8AE30C974A1 /* Pods-A00LaunchMeasure_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5376D34A4D0B4FF3EDAABE560C970DDC /* Pods-A00LaunchMeasure_Tests-dummy.m */; };
 		8AD5330CE9D1A9D48B4502AF1EB29038 /* A00CppInitMeasure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D0D35F6D4728B2B5F42BA6BD5F9588 /* A00CppInitMeasure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95C43AB2143F4854D7B1353CBAE5660F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
@@ -31,24 +30,30 @@
 		A9F5C4377C28527E56D77F1472214A2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		B6C22DEAE98A82BFBDB191E3AAC8AC1C /* Pods-A00LaunchMeasure_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4BB2C806CF73759B7D1ECC8C3FE2A8D /* Pods-A00LaunchMeasure_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B83B8BA76C8A8DBFE263CFDA8C6ADF73 /* A00CppInitMeasure.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB432566175C4E3B7961AFCC22927411 /* A00CppInitMeasure.mm */; };
+		CC0890270F839D4F00FB7DAE7D1C7D0D /* QiLagDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CB79B3674EC4FA482995B98D8C3AF5B /* QiLagDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6B338B774D347D08EE173EDDD6A417F /* A00LaunchMeasure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DB0044CC0A04D427D8FB20FE2E2A7 /* A00LaunchMeasure-dummy.m */; };
+		E2BC833485842E80906E7457D43DC74F /* QiCallTraceTimeCostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 672353F4DD629874A7FB064AF137E4C9 /* QiCallTraceTimeCostModel.m */; };
+		F526E04689E702A15CAED8EC978D21F4 /* QiCallTraceCore.c in Sources */ = {isa = PBXBuildFile; fileRef = B804C4B1C60BFAA9A5F353687DBA1A10 /* QiCallTraceCore.c */; };
+		FF7F6B44B0CC48F800F1013CD4BCFDAD /* A00LaunchMeasure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8728A3FC059AC1F7A1908E8CE0D89004 /* A00LaunchMeasure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFE95ADEA3B41CA450E70A0462F3F21D /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = BB7446E430E41D2D2024AF39E26BC774 /* fishhook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1026F1DB849D8F8DE29FA52A80FBD24C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9537B33A5AFB04E025E276B900DB150E;
-			remoteInfo = "Pods-A00LaunchMeasure_Example";
-		};
-		3E6FFEBB3C8E551EFC84EF9C5CDF22FD /* PBXContainerItemProxy */ = {
+		B4763372A6C5779BC0341FD5EABCEEE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0344C0C60BE64F5728B45BD963AC9219;
 			remoteInfo = A00LaunchMeasure;
 		};
-		FD4A6C9D7BE55266DF0A408C25110EC8 /* PBXContainerItemProxy */ = {
+		D138DD281F8E61F8F77A14C948913160 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9537B33A5AFB04E025E276B900DB150E;
+			remoteInfo = "Pods-A00LaunchMeasure_Example";
+		};
+		DD8A4409B31F8ABE08B2131B5F9C5302 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -58,42 +63,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0167BF4EA608927B19A90B5413017F5A /* A00LaunchMeasure-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "A00LaunchMeasure-xcframeworks.sh"; sourceTree = "<group>"; };
+		0280044F8C4C524AA38142A3CBECA111 /* HDLaunchTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HDLaunchTask.h; path = A00LaunchMeasure/Classes/TaskList/HDLaunchTask.h; sourceTree = "<group>"; };
+		04D63CC91A38E083BE383400E480C9F0 /* A00LaunchMeasure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "A00LaunchMeasure-prefix.pch"; sourceTree = "<group>"; };
 		0A0E8B0746DA7BD07F53C37F3010F7F2 /* Pods-A00LaunchMeasure_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-A00LaunchMeasure_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0DB85665EB2290C14B8D6C289458C68F /* Pods-A00LaunchMeasure_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-A00LaunchMeasure_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1489AA916E14DE660D51C5843254D18E /* A00CppInitMeasure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = A00CppInitMeasure.modulemap; sourceTree = "<group>"; };
-		169ADFA923C6E8CEA30B733D03F9ABC5 /* A00LaunchMeasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00LaunchMeasure.debug.xcconfig; sourceTree = "<group>"; };
+		17D0A4B49C9F7F9F02146D517D91E674 /* A00LaunchMeasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00LaunchMeasure.debug.xcconfig; sourceTree = "<group>"; };
 		1E9172B8EE2CD0D24D3917F7F98AE2A0 /* Pods-A00LaunchMeasure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-A00LaunchMeasure_Example.release.xcconfig"; sourceTree = "<group>"; };
+		27AAB9442FD8C2D865B04064A47A7BF8 /* fishhook.c */ = {isa = PBXFileReference; includeInIndex = 1; path = fishhook.c; sourceTree = "<group>"; };
 		2FCC6625ACD467C6698B359A52068278 /* Pods-A00LaunchMeasure_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-A00LaunchMeasure_Tests-Info.plist"; sourceTree = "<group>"; };
+		31F5BA145C04D0EF03392D417ACBCF40 /* A00LaunchMeasure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = A00LaunchMeasure.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3215916B8439E3E63B67A3FCB13F602E /* Pods-A00LaunchMeasure_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-A00LaunchMeasure_Example-dummy.m"; sourceTree = "<group>"; };
 		324043D2096334C84C03875E8D7A56E3 /* Pods-A00LaunchMeasure_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-A00LaunchMeasure_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		32998BDE8E4FC72F43C9BEB275804967 /* A00CppInitMeasure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = A00CppInitMeasure.h; path = A00CppInitMeasure/Classes/A00CppInitMeasure.h; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3B6FED5BF9DA31C0A008843205D6687C /* QiCallTrace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QiCallTrace.h; sourceTree = "<group>"; };
+		3E105DCE6A00953F4B9C01C48A3FD1C7 /* A00LaunchMeasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00LaunchMeasure.release.xcconfig; sourceTree = "<group>"; };
 		445DABAFED3A61C61DDDFEBD20F73F36 /* Pods-A00LaunchMeasure_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-A00LaunchMeasure_Example-umbrella.h"; sourceTree = "<group>"; };
 		4520C1EFEC7FB2825CC3DC30A3C6585E /* Pods-A00LaunchMeasure_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-A00LaunchMeasure_Tests.modulemap"; sourceTree = "<group>"; };
 		4563DA99BB75BAD1851CE97F6C88E872 /* Pods-A00LaunchMeasure_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-A00LaunchMeasure_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5376D34A4D0B4FF3EDAABE560C970DDC /* Pods-A00LaunchMeasure_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-A00LaunchMeasure_Tests-dummy.m"; sourceTree = "<group>"; };
-		5BCE10CA202157717D39156094D50238 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		641BBF8A9441EF4B57DF65ABA99DEE02 /* A00LaunchMeasure.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = A00LaunchMeasure.xcframework; path = Example/build/A00LaunchMeasure.xcframework; sourceTree = "<group>"; };
+		5EAD475CF1330893E4A130DD5901099D /* QiCallTraceTimeCostModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QiCallTraceTimeCostModel.h; sourceTree = "<group>"; };
 		645F47E69A316558DD8F2E8929E5C3CF /* A00CppInitMeasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00CppInitMeasure.debug.xcconfig; sourceTree = "<group>"; };
+		672353F4DD629874A7FB064AF137E4C9 /* QiCallTraceTimeCostModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = QiCallTraceTimeCostModel.m; sourceTree = "<group>"; };
+		690DBF31E3ADD2C46B12B29CD91A0038 /* A00LoadMeasure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = A00LoadMeasure.m; path = A00LaunchMeasure/Classes/LoadMeasure/A00LoadMeasure.m; sourceTree = "<group>"; };
+		696DDA13A793EF879C2595FCA4F06327 /* A00LaunchMeasure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = A00LaunchMeasure.modulemap; sourceTree = "<group>"; };
 		7613A4A2DD01947BEF079FA9A05E5359 /* Pods-A00LaunchMeasure_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-A00LaunchMeasure_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7B85FDA83C93A0907B9EB9AC38B1F518 /* A00LaunchMeasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00LaunchMeasure.release.xcconfig; sourceTree = "<group>"; };
+		7A2DF70577A30E178C024EE5B68E9B4A /* HDLaunchTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HDLaunchTask.m; path = A00LaunchMeasure/Classes/TaskList/HDLaunchTask.m; sourceTree = "<group>"; };
 		7C79C3071E65D4B596F4AB92B38B19C4 /* A00CppInitMeasure-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "A00CppInitMeasure-Info.plist"; sourceTree = "<group>"; };
+		7CB79B3674EC4FA482995B98D8C3AF5B /* QiLagDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QiLagDB.h; sourceTree = "<group>"; };
 		7D3A037EFD0A31B42A409986FD3E548F /* Pods-A00LaunchMeasure_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-A00LaunchMeasure_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7F2A7AF96FCB7F4F986B7D44BF79E8BE /* A00CppInitMeasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = A00CppInitMeasure.release.xcconfig; sourceTree = "<group>"; };
 		85DF967E1F5507708B575C5A83786F1E /* Pods-A00LaunchMeasure_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-A00LaunchMeasure_Example-frameworks.sh"; sourceTree = "<group>"; };
-		903386BFB9BC7A375DA41FB977671DED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8728A3FC059AC1F7A1908E8CE0D89004 /* A00LaunchMeasure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "A00LaunchMeasure-umbrella.h"; sourceTree = "<group>"; };
+		8A619ED61B325E583508F86FBA7E4F62 /* A00LaunchMeasure */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = A00LaunchMeasure; path = A00LaunchMeasure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E596AC085A2A857E1ED4C20DEB6AA85 /* QiCallTraceCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QiCallTraceCore.h; sourceTree = "<group>"; };
 		95B57DD350D91BC2966416CA88A3E130 /* A00CppInitMeasure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "A00CppInitMeasure-dummy.m"; sourceTree = "<group>"; };
-		9B27B976F7A43C6526879903CF9AB263 /* A00LaunchMeasure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = A00LaunchMeasure.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A20D15905CE83173C56A69AA522205CE /* Pods-A00LaunchMeasure_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-A00LaunchMeasure_Example-Info.plist"; sourceTree = "<group>"; };
 		A5D0D35F6D4728B2B5F42BA6BD5F9588 /* A00CppInitMeasure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "A00CppInitMeasure-umbrella.h"; sourceTree = "<group>"; };
+		ADBD8A145E2C480996D2E679C2668190 /* QiCallTrace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = QiCallTrace.m; sourceTree = "<group>"; };
+		B2BECC906FCD74BC2EE1CB1868546503 /* QiCallLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QiCallLib.h; sourceTree = "<group>"; };
 		B6CC1B485370008260F1C1B573F1B1FC /* Pods-A00LaunchMeasure_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-A00LaunchMeasure_Example"; path = Pods_A00LaunchMeasure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B804C4B1C60BFAA9A5F353687DBA1A10 /* QiCallTraceCore.c */ = {isa = PBXFileReference; includeInIndex = 1; path = QiCallTraceCore.c; sourceTree = "<group>"; };
 		BB432566175C4E3B7961AFCC22927411 /* A00CppInitMeasure.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = A00CppInitMeasure.mm; path = A00CppInitMeasure/Classes/A00CppInitMeasure.mm; sourceTree = "<group>"; };
+		BB7446E430E41D2D2024AF39E26BC774 /* fishhook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		C6360F0FD008A425F0DF1FBE307D6D1F /* A00LoadMeasure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = A00LoadMeasure.h; path = A00LaunchMeasure/Classes/LoadMeasure/A00LoadMeasure.h; sourceTree = "<group>"; };
 		C6925D2AF572FC13E83562B01B3B0F33 /* Pods-A00LaunchMeasure_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-A00LaunchMeasure_Example.modulemap"; sourceTree = "<group>"; };
+		CE18765E67141B262DEB1712BD2BBF40 /* A00LaunchMeasure-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "A00LaunchMeasure-Info.plist"; sourceTree = "<group>"; };
+		D01DB0044CC0A04D427D8FB20FE2E2A7 /* A00LaunchMeasure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "A00LaunchMeasure-dummy.m"; sourceTree = "<group>"; };
+		D0EF02FCCAFA174D2A56C3B69B7434A8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		D2C2097F529AB7FBB4AECA5BE08B8A83 /* Pods-A00LaunchMeasure_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-A00LaunchMeasure_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D80B912D47E94FC4E2E2576A63DE94B7 /* Pods-A00LaunchMeasure_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-A00LaunchMeasure_Tests"; path = Pods_A00LaunchMeasure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9ADD059C3759D8F0ECDC7EDD4B8AB47 /* QiLagDB.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = QiLagDB.m; sourceTree = "<group>"; };
 		DE04437182F8EF7342E055976341B54E /* A00CppInitMeasure */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = A00CppInitMeasure; path = A00CppInitMeasure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA20E123E74E644FE090E76FA4433AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E4BB2C806CF73759B7D1ECC8C3FE2A8D /* Pods-A00LaunchMeasure_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-A00LaunchMeasure_Tests-umbrella.h"; sourceTree = "<group>"; };
 		ED966934C3BD74199B20E351BB6281C1 /* A00CppInitMeasure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "A00CppInitMeasure-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +139,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D645598E4F807D4E8BD0392E42D9ECA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F499201B663BBBF3B1807200FC0D5F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6912C5B5D434C89898638D7E1CCABC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,10 +158,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07A7A145960831F814B2842F90E3E7DD /* Development Pods */ = {
+		0358FFBFCA4EE2BA10FC5846D1C88F95 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				9059D40260A537AC83CEFD37A93D963D /* A00LaunchMeasure */,
+				31F5BA145C04D0EF03392D417ACBCF40 /* A00LaunchMeasure.podspec */,
+				DEA20E123E74E644FE090E76FA4433AD /* LICENSE */,
+				D0EF02FCCAFA174D2A56C3B69B7434A8 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		0B8792A7F71F727B3E56CED0E87BCA08 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94A444B5E31E4DB3B94256D578CB13E8 /* A00LaunchMeasure */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -140,6 +182,16 @@
 				1879CF848D5806E3E0A7889B88AE568C /* A00CppInitMeasure */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1054B8E8A52E7115535FB78FEA654F84 /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				27AAB9442FD8C2D865B04064A47A7BF8 /* fishhook.c */,
+				BB7446E430E41D2D2024AF39E26BC774 /* fishhook.h */,
+			);
+			name = fishhook;
+			path = A00LaunchMeasure/Classes/AfterMeasure/fishhook;
 			sourceTree = "<group>";
 		};
 		1879CF848D5806E3E0A7889B88AE568C /* A00CppInitMeasure */ = {
@@ -153,6 +205,15 @@
 			path = A00CppInitMeasure;
 			sourceTree = "<group>";
 		};
+		1A5200CADF00AE69BD8A45AB37B6C7EE /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				0280044F8C4C524AA38142A3CBECA111 /* HDLaunchTask.h */,
+				7A2DF70577A30E178C024EE5B68E9B4A /* HDLaunchTask.m */,
+			);
+			name = TaskList;
+			sourceTree = "<group>";
+		};
 		2562A986DF2948F9BFD3B0F51AAED777 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,22 +223,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		54552024C1F65DB26634EA7AFE5FD351 /* Pod */ = {
+		2CD060AC22661D75BC5B50A96ABECB6E /* AfterMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				9B27B976F7A43C6526879903CF9AB263 /* A00LaunchMeasure.podspec */,
-				903386BFB9BC7A375DA41FB977671DED /* LICENSE */,
-				5BCE10CA202157717D39156094D50238 /* README.md */,
+				1054B8E8A52E7115535FB78FEA654F84 /* fishhook */,
+				C56F7FA8C62DC53DF6516E63B23372D7 /* QiLagMonitor */,
 			);
-			name = Pod;
+			name = AfterMeasure;
 			sourceTree = "<group>";
 		};
-		5AB5431723FB374F37A1271308B9E080 /* Frameworks */ = {
+		504A64DED3D40C5CED231604B6A21D04 /* LoadMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				641BBF8A9441EF4B57DF65ABA99DEE02 /* A00LaunchMeasure.xcframework */,
+				C6360F0FD008A425F0DF1FBE307D6D1F /* A00LoadMeasure.h */,
+				690DBF31E3ADD2C46B12B29CD91A0038 /* A00LoadMeasure.m */,
 			);
-			name = Frameworks;
+			name = LoadMeasure;
+			sourceTree = "<group>";
+		};
+		688A722975C06ADFAE50FF3F6DBA3041 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE04437182F8EF7342E055976341B54E /* A00CppInitMeasure */,
+				8A619ED61B325E583508F86FBA7E4F62 /* A00LaunchMeasure */,
+				B6CC1B485370008260F1C1B573F1B1FC /* Pods-A00LaunchMeasure_Example */,
+				D80B912D47E94FC4E2E2576A63DE94B7 /* Pods-A00LaunchMeasure_Tests */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		85825F7DD3DB854F6A423B2CCA2C5246 /* Pods-A00LaunchMeasure_Example */ = {
@@ -197,35 +269,59 @@
 			path = "Target Support Files/Pods-A00LaunchMeasure_Example";
 			sourceTree = "<group>";
 		};
-		9059D40260A537AC83CEFD37A93D963D /* A00LaunchMeasure */ = {
+		875BB7FDB00FC1BDD05118B84F545114 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AB5431723FB374F37A1271308B9E080 /* Frameworks */,
-				54552024C1F65DB26634EA7AFE5FD351 /* Pod */,
-				E776A345FCD7911F9B8A3D7A4246EC07 /* Support Files */,
+				696DDA13A793EF879C2595FCA4F06327 /* A00LaunchMeasure.modulemap */,
+				D01DB0044CC0A04D427D8FB20FE2E2A7 /* A00LaunchMeasure-dummy.m */,
+				CE18765E67141B262DEB1712BD2BBF40 /* A00LaunchMeasure-Info.plist */,
+				04D63CC91A38E083BE383400E480C9F0 /* A00LaunchMeasure-prefix.pch */,
+				8728A3FC059AC1F7A1908E8CE0D89004 /* A00LaunchMeasure-umbrella.h */,
+				17D0A4B49C9F7F9F02146D517D91E674 /* A00LaunchMeasure.debug.xcconfig */,
+				3E105DCE6A00953F4B9C01C48A3FD1C7 /* A00LaunchMeasure.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/A00LaunchMeasure";
+			sourceTree = "<group>";
+		};
+		94A444B5E31E4DB3B94256D578CB13E8 /* A00LaunchMeasure */ = {
+			isa = PBXGroup;
+			children = (
+				2CD060AC22661D75BC5B50A96ABECB6E /* AfterMeasure */,
+				504A64DED3D40C5CED231604B6A21D04 /* LoadMeasure */,
+				0358FFBFCA4EE2BA10FC5846D1C88F95 /* Pod */,
+				875BB7FDB00FC1BDD05118B84F545114 /* Support Files */,
+				1A5200CADF00AE69BD8A45AB37B6C7EE /* TaskList */,
 			);
 			name = A00LaunchMeasure;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		C4A58F39790D73E1B13B24D9004A5DF2 /* Products */ = {
+		C56F7FA8C62DC53DF6516E63B23372D7 /* QiLagMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				DE04437182F8EF7342E055976341B54E /* A00CppInitMeasure */,
-				B6CC1B485370008260F1C1B573F1B1FC /* Pods-A00LaunchMeasure_Example */,
-				D80B912D47E94FC4E2E2576A63DE94B7 /* Pods-A00LaunchMeasure_Tests */,
+				B2BECC906FCD74BC2EE1CB1868546503 /* QiCallLib.h */,
+				3B6FED5BF9DA31C0A008843205D6687C /* QiCallTrace.h */,
+				ADBD8A145E2C480996D2E679C2668190 /* QiCallTrace.m */,
+				B804C4B1C60BFAA9A5F353687DBA1A10 /* QiCallTraceCore.c */,
+				8E596AC085A2A857E1ED4C20DEB6AA85 /* QiCallTraceCore.h */,
+				5EAD475CF1330893E4A130DD5901099D /* QiCallTraceTimeCostModel.h */,
+				672353F4DD629874A7FB064AF137E4C9 /* QiCallTraceTimeCostModel.m */,
+				7CB79B3674EC4FA482995B98D8C3AF5B /* QiLagDB.h */,
+				D9ADD059C3759D8F0ECDC7EDD4B8AB47 /* QiLagDB.m */,
 			);
-			name = Products;
+			name = QiLagMonitor;
+			path = A00LaunchMeasure/Classes/AfterMeasure/QiLagMonitor;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				07A7A145960831F814B2842F90E3E7DD /* Development Pods */,
+				0B8792A7F71F727B3E56CED0E87BCA08 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				104733760A8844CF63529BC60BCB958C /* Pods */,
-				C4A58F39790D73E1B13B24D9004A5DF2 /* Products */,
+				688A722975C06ADFAE50FF3F6DBA3041 /* Products */,
 				2562A986DF2948F9BFD3B0F51AAED777 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -259,17 +355,6 @@
 				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		E776A345FCD7911F9B8A3D7A4246EC07 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0167BF4EA608927B19A90B5413017F5A /* A00LaunchMeasure-xcframeworks.sh */,
-				169ADFA923C6E8CEA30B733D03F9ABC5 /* A00LaunchMeasure.debug.xcconfig */,
-				7B85FDA83C93A0907B9EB9AC38B1F518 /* A00LaunchMeasure.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/A00LaunchMeasure";
 			sourceTree = "<group>";
 		};
 		FFDEAD34E71A7F5780D2D69CFEDA3E9D /* Pods-A00LaunchMeasure_Tests */ = {
@@ -308,6 +393,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2BDB629A3E5CC674C8EAB9D4EE7AF7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7F6B44B0CC48F800F1013CD4BCFDAD /* A00LaunchMeasure-umbrella.h in Headers */,
+				2083135510F4FD6D47877266F4900511 /* A00LoadMeasure.h in Headers */,
+				FFE95ADEA3B41CA450E70A0462F3F21D /* fishhook.h in Headers */,
+				347B6015CBD5EA154C845B8227A99262 /* HDLaunchTask.h in Headers */,
+				4057E6222FEE20D5839C5703FE1E2CA2 /* QiCallLib.h in Headers */,
+				6A72818A4DA38567A07DE5D97B08F28D /* QiCallTrace.h in Headers */,
+				02E8E03A42F84E9CF4B791FEC2E0FAF0 /* QiCallTraceCore.h in Headers */,
+				7214E7841625314C340FBF7E9949C9AF /* QiCallTraceTimeCostModel.h in Headers */,
+				CC0890270F839D4F00FB7DAE7D1C7D0D /* QiLagDB.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7511B109027D99E2A79270DB4C95E71 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +420,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0344C0C60BE64F5728B45BD963AC9219 /* A00LaunchMeasure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40F6C4CEC3204765823603CDE1FED6C7 /* Build configuration list for PBXNativeTarget "A00LaunchMeasure" */;
+			buildPhases = (
+				A2BDB629A3E5CC674C8EAB9D4EE7AF7C /* Headers */,
+				3DAFC16E3C40A3053C2BBF86074F7075 /* Sources */,
+				D645598E4F807D4E8BD0392E42D9ECA3 /* Frameworks */,
+				F8FAE3525C1A3BA24D4B0A596E527BAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = A00LaunchMeasure;
+			productName = A00LaunchMeasure;
+			productReference = 8A619ED61B325E583508F86FBA7E4F62 /* A00LaunchMeasure */;
+			productType = "com.apple.product-type.framework";
+		};
 		3982C5F22718E97E3FD6E0C64E05DDFC /* A00CppInitMeasure */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69B008ABD715FEC95B74407B34DA072A /* Build configuration list for PBXNativeTarget "A00CppInitMeasure" */;
@@ -349,7 +468,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				357E1BBAF727B70B68B18F8274141E8C /* PBXTargetDependency */,
+				4ADC70EBC95A105C8FC4BC1B76AAC002 /* PBXTargetDependency */,
 			);
 			name = "Pods-A00LaunchMeasure_Tests";
 			productName = Pods_A00LaunchMeasure_Tests;
@@ -368,8 +487,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				B80A3DFC51ECADD4D8BCB4FE9DB8E2E4 /* PBXTargetDependency */,
-				6C18F998DAD2228F82164301D2E3F9F6 /* PBXTargetDependency */,
+				EFDFC000CE7F1CAF53B9AC3640F24A95 /* PBXTargetDependency */,
+				4BC154B26D5F73C98F23B26B1EDCB169 /* PBXTargetDependency */,
 			);
 			name = "Pods-A00LaunchMeasure_Example";
 			productName = Pods_A00LaunchMeasure_Example;
@@ -396,7 +515,7 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = C4A58F39790D73E1B13B24D9004A5DF2 /* Products */;
+			productRefGroup = 688A722975C06ADFAE50FF3F6DBA3041 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -430,29 +549,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E0B789AD1B6C549A6D934E8B3064C76A /* [CP] Copy XCFrameworks */ = {
-			isa = PBXShellScriptBuildPhase;
+		F8FAE3525C1A3BA24D4B0A596E527BAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/A00LaunchMeasure/A00LaunchMeasure-xcframeworks-input-files.xcfilelist",
-			);
-			name = "[CP] Copy XCFrameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/A00LaunchMeasure/A00LaunchMeasure-xcframeworks-output-files.xcfilelist",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/A00LaunchMeasure/A00LaunchMeasure-xcframeworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3DAFC16E3C40A3053C2BBF86074F7075 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B338B774D347D08EE173EDDD6A417F /* A00LaunchMeasure-dummy.m in Sources */,
+				164F386ED345C19695ED7E51F133BBC8 /* A00LoadMeasure.m in Sources */,
+				2BCC9B010F465C833D4CF2DF98E506F2 /* fishhook.c in Sources */,
+				5D79D73A7D96F7D0D20EAA68E38F997F /* HDLaunchTask.m in Sources */,
+				71E287D3735A8A371C942CBB64703B81 /* QiCallTrace.m in Sources */,
+				F526E04689E702A15CAED8EC978D21F4 /* QiCallTraceCore.c in Sources */,
+				E2BC833485842E80906E7457D43DC74F /* QiCallTraceTimeCostModel.m in Sources */,
+				80B26B1F8FB693E7FA9720A3A3E85C0E /* QiLagDB.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54C65FC59C60CBB090984DD176E9382E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,23 +602,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		357E1BBAF727B70B68B18F8274141E8C /* PBXTargetDependency */ = {
+		4ADC70EBC95A105C8FC4BC1B76AAC002 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-A00LaunchMeasure_Example";
 			target = 9537B33A5AFB04E025E276B900DB150E /* Pods-A00LaunchMeasure_Example */;
-			targetProxy = 1026F1DB849D8F8DE29FA52A80FBD24C /* PBXContainerItemProxy */;
+			targetProxy = D138DD281F8E61F8F77A14C948913160 /* PBXContainerItemProxy */;
 		};
-		6C18F998DAD2228F82164301D2E3F9F6 /* PBXTargetDependency */ = {
+		4BC154B26D5F73C98F23B26B1EDCB169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = A00LaunchMeasure;
 			target = 0344C0C60BE64F5728B45BD963AC9219 /* A00LaunchMeasure */;
-			targetProxy = 3E6FFEBB3C8E551EFC84EF9C5CDF22FD /* PBXContainerItemProxy */;
+			targetProxy = B4763372A6C5779BC0341FD5EABCEEE5 /* PBXContainerItemProxy */;
 		};
-		B80A3DFC51ECADD4D8BCB4FE9DB8E2E4 /* PBXTargetDependency */ = {
+		EFDFC000CE7F1CAF53B9AC3640F24A95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = A00CppInitMeasure;
 			target = 3982C5F22718E97E3FD6E0C64E05DDFC /* A00CppInitMeasure */;
-			targetProxy = FD4A6C9D7BE55266DF0A408C25110EC8 /* PBXContainerItemProxy */;
+			targetProxy = DD8A4409B31F8ABE08B2131B5F9C5302 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -807,26 +928,48 @@
 			};
 			name = Debug;
 		};
-		600BF29C3757D9F7D40E94332D388A26 /* Debug */ = {
+		6B7C6C07201228C07CAF359C4DEA4205 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 169ADFA923C6E8CEA30B733D03F9ABC5 /* A00LaunchMeasure.debug.xcconfig */;
+			baseConfigurationReference = 3E105DCE6A00953F4B9C01C48A3FD1C7 /* A00LaunchMeasure.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GENERATE_INFOPLIST_FILE = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_MODULE_NAME = A00LaunchMeasure;
+				PRODUCT_NAME = A00LaunchMeasure;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		79FF8EC643D528FEF43D962A83E15FCF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -872,27 +1015,47 @@
 			};
 			name = Release;
 		};
-		D82EC13020C3D55640C7D3BE1F4F131E /* Release */ = {
+		C08598CC2032821856A70FF17794A1D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B85FDA83C93A0907B9EB9AC38B1F518 /* A00LaunchMeasure.release.xcconfig */;
+			baseConfigurationReference = 17D0A4B49C9F7F9F02146D517D91E674 /* A00LaunchMeasure.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GENERATE_INFOPLIST_FILE = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = "Target Support Files/A00LaunchMeasure/A00LaunchMeasure.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_MODULE_NAME = A00LaunchMeasure;
+				PRODUCT_NAME = A00LaunchMeasure;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F848080202D2622FD7061D919E6D42A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -940,11 +1103,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		133E822D39A35CC11E5DCD7139DE2B32 /* Build configuration list for PBXAggregateTarget "A00LaunchMeasure" */ = {
+		40F6C4CEC3204765823603CDE1FED6C7 /* Build configuration list for PBXNativeTarget "A00LaunchMeasure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				600BF29C3757D9F7D40E94332D388A26 /* Debug */,
-				D82EC13020C3D55640C7D3BE1F4F131E /* Release */,
+				C08598CC2032821856A70FF17794A1D9 /* Debug */,
+				6B7C6C07201228C07CAF359C4DEA4205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -49,6 +49,7 @@ Pod::Spec.new do |s|
         afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
       end
   else
+      # https://github.com/CocoaPods/CocoaPods/issues/7942
       s.vendored_frameworks = './Example/build/A00LaunchMeasure.xcframework'
   end
   

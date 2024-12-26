@@ -1,6 +1,8 @@
 #!/bin/bash
 
 WORKSPACE_NAME="A00LaunchMeasure.xcworkspace"
+FRAMEWORK_NAME="A00LaunchMeasure"
+FRAMEWORK_PATH="../$FRAMEWORK_NAME/Frameworks"
 
 # Cleanup
 rm -rf build
@@ -49,11 +51,10 @@ build_xcframework() {
     xcodebuild -create-xcframework \
       -framework build/ios_devices.xcarchive/Products/Library/Frameworks/$1.framework \
       -framework build/ios_simulator.xcarchive/Products/Library/Frameworks/$1.framework \
-      -output build/$1.xcframework
+      -output $FRAMEWORK_PATH/$1.xcframework
 
-    # Remove archives
-    rm -rf build/ios_devices.xcarchive
-    rm -rf build/ios_simulator.xcarchive
+    # Cleanup
+    rm -rf build
 
     if [ $? -ne 0 ]; then
         echo "Create $1 XCFramework failed. Exiting..."
@@ -61,4 +62,5 @@ build_xcframework() {
     fi
 }
 
-build_xcframework A00LaunchMeasure
+build_xcframework $FRAMEWORK_NAME
+echo "XCFramework 已生成在: build/$FRAMEWORK_NAME.xcframework"
