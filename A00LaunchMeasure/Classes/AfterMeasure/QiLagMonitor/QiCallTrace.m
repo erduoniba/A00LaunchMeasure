@@ -94,7 +94,7 @@
         model.callDepth = rd->depth;
         model.lr = rd->lr;
         
-        if (rd->caller_record != NULL) {
+        if (rd->caller_record != NULL && rd->depth > 0) {
             model.callerLr = rd->caller_record->lr;
         }
         

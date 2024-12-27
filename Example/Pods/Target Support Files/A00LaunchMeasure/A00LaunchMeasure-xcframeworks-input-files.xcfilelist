@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/A00LaunchMeasure/A00LaunchMeasure-xcframeworks.sh
-${PODS_ROOT}/../build/A00LaunchMeasure.xcframework
+${PODS_ROOT}/../../A00LaunchMeasure/Frameworks/A00LaunchMeasure.xcframework

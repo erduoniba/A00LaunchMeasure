@@ -138,3 +138,7 @@ _GLOBAL__sub_I_TestStaticClassMemberMutex.cpp : 0.042081 ms
                   mainTasks-HDLaunchDemo load time: 0.355125 ms
 ```
 
+## 6、其他资料
+如何将一个带有依赖（源码 + 二进制）的 Cocoapods pod 打包为 xcframework
+https://blog.ficowshen.com/page/post/132
+

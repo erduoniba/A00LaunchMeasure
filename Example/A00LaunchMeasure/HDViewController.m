@@ -35,7 +35,7 @@
     [self test1_1];
     [self test2_1];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [QiCallTrace stop];
         [QiCallTrace save];
         
@@ -49,15 +49,19 @@
         [HDLaunchTask printPostMainTime];
     });
     
-    [UIApplication.sharedApplication openURL:[NSURL URLWithString:@"openjdlite://virtual?params=%7B%22category%22%3A%22jump%22%2C%22des%22%3A%22productDetail%22%2C%22skuId%22%3A%2240420036170%22%7D"] options:@{} completionHandler:^(BOOL success) {
-        
-    }];
+//    [UIApplication.sharedApplication openURL:[NSURL URLWithString:@"openjdlite://virtual?params=%7B%22category%22%3A%22jump%22%2C%22des%22%3A%22productDetail%22%2C%22skuId%22%3A%2240420036170%22%7D"] options:@{} completionHandler:^(BOOL success) {
+//        
+//    }];
 }
 
 - (void)test1_1 {
     usleep(100 * 1000);
     [self test1_2];
     [self test1_3];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self test1_4];
+    });
 }
 
 - (void)test1_2 {
@@ -66,6 +70,18 @@
 
 - (void)test1_3 {
     usleep(300 * 1000);
+}
+
+- (void)test1_4 {
+    usleep(400 * 1000);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self test1_5];
+    });
+}
+
+- (void)test1_5 {
+    usleep(500 * 1000);
 }
 
 - (void)test2_1 {
