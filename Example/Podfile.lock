@@ -1,16 +1,16 @@
 PODS:
   - A00CppInitMeasure (0.1.0)
-  - A00LaunchMeasure (1.0.1):
-    - A00LaunchMeasure/AfterMeasure (= 1.0.1)
-    - A00LaunchMeasure/LoadMeasure (= 1.0.1)
-    - A00LaunchMeasure/TaskList (= 1.0.1)
-  - A00LaunchMeasure/AfterMeasure (1.0.1)
-  - A00LaunchMeasure/LoadMeasure (1.0.1)
-  - A00LaunchMeasure/TaskList (1.0.1)
+  - A00LaunchMeasure/AfterMeasure (1.0.2)
+  - A00LaunchMeasure/LoadMeasure (1.0.2)
+  - A00LaunchMeasure/Source (1.0.2):
+    - A00LaunchMeasure/AfterMeasure
+    - A00LaunchMeasure/LoadMeasure
+    - A00LaunchMeasure/TaskList
+  - A00LaunchMeasure/TaskList (1.0.2)
 
 DEPENDENCIES:
   - A00CppInitMeasure
-  - A00LaunchMeasure (from `../`)
+  - A00LaunchMeasure/Source (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -22,8 +22,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   A00CppInitMeasure: f4c0c818ee40aa7c0fe89ba898809ad6bdb783af
-  A00LaunchMeasure: c3b0ff01024ca7b142a7bc7cd717827ae9cf61c5
+  A00LaunchMeasure: 8459febb92920e98ce3d6987b29ea7c5c8da98ba
 
-PODFILE CHECKSUM: c43d63bb67a4c9107b73353f2ecc82b58392af49
+PODFILE CHECKSUM: f539aadea68af137760cdb5271870d3fab7146a8
 
 COCOAPODS: 1.16.1

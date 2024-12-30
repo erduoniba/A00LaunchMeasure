@@ -1,13 +1,19 @@
 #!/bin/bash
 
-WORKSPACE_NAME="A00LaunchMeasure.xcworkspace"
 FRAMEWORK_NAME="A00LaunchMeasure"
+WORKSPACE_NAME="${FRAMEWORK_NAME}.xcworkspace"
 FRAMEWORK_PATH="../$FRAMEWORK_NAME/Frameworks"
+
+
+VersionString=`grep -E 's.version.*=' ../${FRAMEWORK_NAME}.podspec`
+# 获取版本信息，譬如：'1.0.2'
+VersionNumber=`echo $VersionString | awk -F"'" '{print $2}'`
+echo $VersionNumber
 
 # Cleanup
 rm -rf build
 
-# 使用源码安装
+# 使用源码安装，需要构建新的二进制
 IS_SOURCE=1 pod install
 
 if [ $? -ne 0 ]; then
@@ -51,7 +57,7 @@ build_xcframework() {
     xcodebuild -create-xcframework \
       -framework build/ios_devices.xcarchive/Products/Library/Frameworks/$1.framework \
       -framework build/ios_simulator.xcarchive/Products/Library/Frameworks/$1.framework \
-      -output $FRAMEWORK_PATH/$1.xcframework
+      -output $FRAMEWORK_PATH/"$1_$VersionNumber/$1".xcframework
 
     # Cleanup
     rm -rf build

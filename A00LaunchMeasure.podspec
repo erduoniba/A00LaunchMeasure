@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
                       0.1.4: 设置该组件默认是动态库
                       1.0.0: 升级大版本，无代码变动
                       1.0.1: 添加自动打包xcframework脚本，默认支持以动态库被App依赖
+                      1.0.2: 支持单仓下，源码和二进制切换
                        DESC
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
@@ -36,21 +37,39 @@ Pod::Spec.new do |s|
   # 设置为动态库
   s.static_framework = false
   
+  # Framework模式
+  s.subspec 'Framework' do |framework|
+    # https://github.com/CocoaPods/CocoaPods/issues/7942
+    framework.vendored_frameworks = "A00LaunchMeasure/Frameworks/A00LaunchMeasure_#{s.version.to_s}/A00LaunchMeasure.xcframework"
+  end
+  
+  # Source模式
+  s.subspec 'Source' do |source|
+    source.dependency 'A00LaunchMeasure/LoadMeasure'
+    source.dependency 'A00LaunchMeasure/TaskList'
+    source.dependency 'A00LaunchMeasure/AfterMeasure'
+  end
+  
+  s.subspec 'LoadMeasure' do |loadMeasure|
+    loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
+  end
+  
+  s.subspec 'TaskList' do |taskList|
+    taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
+  end
+  
+  s.subspec 'AfterMeasure' do |afterMeasure|
+    afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
+  end
+  
+  # 只支持Podfile直接依赖该 .podspecs 文件，其他方式提交后会变成podspec.json，不再支持if判断
+  # 使用 IS_SOURCE=1 pod install 安装
   if ENV['IS_SOURCE']
-      s.subspec 'LoadMeasure' do |loadMeasure|
-        loadMeasure.source_files = 'A00LaunchMeasure/Classes/LoadMeasure/*.{h,m}'
-      end
-      
-      s.subspec 'TaskList' do |taskList|
-        taskList.source_files = 'A00LaunchMeasure/Classes/TaskList/*.{h,m}'
-      end
-      
-      s.subspec 'AfterMeasure' do |afterMeasure|
-        afterMeasure.source_files = 'A00LaunchMeasure/Classes/AfterMeasure/**/*.{h,m,c}'
-      end
+    # 默认是framework模式
+      s.default_subspec = 'Source'
   else
-      # https://github.com/CocoaPods/CocoaPods/issues/7942
-      s.vendored_frameworks = 'A00LaunchMeasure/Frameworks/A00LaunchMeasure.xcframework'
+    # 默认是framework模式
+      s.default_subspec = 'Framework'
   end
   
   # s.resource_bundles = {

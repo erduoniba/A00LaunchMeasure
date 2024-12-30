@@ -117,5 +117,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/../../A00LaunchMeasure/Frameworks/A00LaunchMeasure.xcframework" "A00LaunchMeasure" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/../../A00LaunchMeasure/Frameworks/A00LaunchMeasure_1.0.2/A00LaunchMeasure.xcframework" "A00LaunchMeasure/Framework" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
 

@@ -4,7 +4,11 @@ platform :ios, '9.0'
 
 target 'A00LaunchMeasure_Example' do
   # 统计项目中 +load 方法及耗时、统计启动main之后函数调用耗时，需要设置为动态库
-  pod 'A00LaunchMeasure', :path => '../'
+  # 默认 Framework 模式
+#  pod 'A00LaunchMeasure', :path => '../'
+  
+  # 使用 Source 模式
+  pod 'A00LaunchMeasure/Source', :path => '../'
   
   # 统计项目中mian之前，C++ 初始化方法耗时，需要设计为静态库
   pod 'A00CppInitMeasure'
