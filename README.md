@@ -142,3 +142,6 @@ _GLOBAL__sub_I_TestStaticClassMemberMutex.cpp : 0.042081 ms
 如何将一个带有依赖（源码 + 二进制）的 Cocoapods pod 打包为 xcframework
 https://blog.ficowshen.com/page/post/132
 
+单仓库-二进制组件化，通过subspec来实现
+https://www.valiantcat.cn/index.php/2017/05/16/48.html
+
