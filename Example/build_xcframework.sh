@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRAMEWORK_NAME="A00LaunchMeasure"
+FRAMEWORK_NAME=$1
 WORKSPACE_NAME="${FRAMEWORK_NAME}.xcworkspace"
 FRAMEWORK_PATH="../$FRAMEWORK_NAME/Frameworks"
 
@@ -8,7 +8,7 @@ FRAMEWORK_PATH="../$FRAMEWORK_NAME/Frameworks"
 VersionString=`grep -E 's.version.*=' ../${FRAMEWORK_NAME}.podspec`
 # 获取版本信息，譬如：'1.0.2'
 VersionNumber=`echo $VersionString | awk -F"'" '{print $2}'`
-echo $VersionNumber
+echo "$FRAMEWORK_NAME $VersionNumber"
 
 # Cleanup
 rm -rf build

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'A00LaunchMeasure'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = '统计启动时刻的方法耗时，方便在做启动优化的时候定位排查问题'
 
 # This description is used to generate tags and improve search results.
@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
                       1.0.0: 升级大版本，无代码变动
                       1.0.1: 添加自动打包xcframework脚本，默认支持以动态库被App依赖
                       1.0.2: 支持单仓下，源码和二进制切换
+                      1.0.3: 添加自动打包、发布脚本
                        DESC
 
   s.homepage         = 'https://github.com/erduoniba/A00LaunchMeasure'
